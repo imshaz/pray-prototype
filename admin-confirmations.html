@@ -91,7 +91,7 @@
       </div>
 
       <!-- ============ CONVERGENCE HIGHLIGHT (CL-15) ============ -->
-      <div class="card" style="margin-top:20px;border-color:var(--amethyst);box-shadow:0 0 0 3px var(--amethyst-wash);">
+      <div class="card" style="margin-top:20px;border-color:var(--klein);box-shadow:0 0 0 3px var(--klein-wash);">
         <div class="card__head">
           <div class="inline" style="gap:10px;">
             <span class="pill pill--praying"><span class="pdot"></span>Convergence</span>
@@ -131,10 +131,10 @@
 
       <!-- ============ FILTERS ============ -->
       <div class="between" style="margin:26px 0 14px;flex-wrap:wrap;gap:12px;">
-        <div class="tabs" data-tab-group style="border:none;margin:0;">
-          <div class="tab is-on">All entries <span class="meta" style="margin-left:4px;">32</span></div>
-          <div class="tab">Internal <span class="meta" style="margin-left:4px;">27</span></div>
-          <div class="tab">Shareable <span class="meta" style="margin-left:4px;">5</span></div>
+        <div class="tabs" style="border:none;margin:0;" data-filter-target="#confRows">
+          <div class="tab is-on" data-filter="all">All entries <span class="meta" style="margin-left:4px;">8</span></div>
+          <div class="tab" data-filter="internal">Internal <span class="meta" style="margin-left:4px;">5</span></div>
+          <div class="tab" data-filter="shareable">Shareable <span class="meta" style="margin-left:4px;">3</span></div>
         </div>
         <div class="inline">
           <div class="seg">
@@ -149,8 +149,8 @@
       <div class="table-wrap">
         <table class="table">
           <thead><tr><th>Entry</th><th>Church</th><th>Relates to</th><th>Logged</th><th>Sharing</th></tr></thead>
-          <tbody>
-            <tr class="row-click" data-action="drawer:confDrawer">
+          <tbody id="confRows">
+            <tr class="row-click" data-stage="shareable" data-action="drawer:confDrawer">
               <td>
                 <div style="font-weight:600;max-width:44ch;">A strong sense of Isaiah 61 over the young people — "beauty for ashes"</div>
                 <div class="meta" style="margin-top:3px;">scripture · recorded by Denise M.</div>
@@ -160,7 +160,7 @@
               <td class="meta">2d</td>
               <td><span class="pill pill--shared">Shareable</span></td>
             </tr>
-            <tr class="row-click" data-action="drawer:confDrawer">
+            <tr class="row-click" data-stage="internal" data-action="drawer:confDrawer">
               <td>
                 <div style="font-weight:600;max-width:44ch;">During the huddle, a repeated impression to pray for reconciliation between two families</div>
                 <div class="meta" style="margin-top:3px;">encouragement · recorded by Paul R.</div>
@@ -170,7 +170,7 @@
               <td class="meta">3d</td>
               <td><span class="pill pill--private">Internal</span></td>
             </tr>
-            <tr class="row-click" data-action="drawer:confDrawer">
+            <tr class="row-click" data-stage="shareable" data-action="drawer:confDrawer">
               <td>
                 <div style="font-weight:600;max-width:44ch;">Scripture kept coming up: Psalm 46, "a very present help"</div>
                 <div class="meta" style="margin-top:3px;">scripture · recorded by Fr. Coleman</div>
@@ -180,7 +180,7 @@
               <td class="meta">4d</td>
               <td><span class="pill pill--shared">Shareable</span></td>
             </tr>
-            <tr class="row-click" data-action="drawer:confDrawer">
+            <tr class="row-click" data-stage="internal" data-action="drawer:confDrawer">
               <td>
                 <div style="font-weight:600;max-width:44ch;">A strategy sensed — to gather the youth pastors across the region before the school year</div>
                 <div class="meta" style="margin-top:3px;">strategy · recorded by Tanya B.</div>
@@ -190,7 +190,7 @@
               <td class="meta">5d</td>
               <td><span class="pill pill--private">Internal</span></td>
             </tr>
-            <tr class="row-click" data-action="drawer:confDrawer">
+            <tr class="row-click" data-stage="internal" data-action="drawer:confDrawer">
               <td>
                 <div style="font-weight:600;max-width:44ch;">Sensed a real hunger for unity — a picture of the congregations praying as one</div>
                 <div class="meta" style="margin-top:3px;">encouragement · recorded by Marcus L.</div>
@@ -200,7 +200,7 @@
               <td class="meta">1w</td>
               <td><span class="pill pill--private">Internal</span></td>
             </tr>
-            <tr class="row-click" data-action="drawer:confDrawer">
+            <tr class="row-click" data-stage="shareable" data-action="drawer:confDrawer">
               <td>
                 <div style="font-weight:600;max-width:44ch;">Word for the city leaders: "Return to Me, and I will return to you" — Zechariah</div>
                 <div class="meta" style="margin-top:3px;">scripture · recorded by Rev. Okafor</div>
@@ -210,9 +210,9 @@
               <td class="meta">1w</td>
               <td><span class="pill pill--shared">Shareable</span></td>
             </tr>
-            <tr class="row-click" data-action="drawer:confDrawer">
+            <tr class="row-click" data-stage="internal" data-action="drawer:confDrawer">
               <td>
-                <div style="font-weight:600;max-width:44ch;">A heaviness lifted after praying for the families in the neighbourhood — sense of hope returning</div>
+                <div style="font-weight:600;max-width:44ch;">A heaviness lifted after praying for the families in the neighborhood — sense of hope returning</div>
                 <div class="meta" style="margin-top:3px;">encouragement · recorded by Gloria W.</div>
               </td>
               <td>Bethel AME</td>
@@ -220,7 +220,7 @@
               <td class="meta">2w</td>
               <td><span class="pill pill--private">Internal</span></td>
             </tr>
-            <tr class="row-click" data-action="drawer:confDrawer">
+            <tr class="row-click" data-stage="internal" data-action="drawer:confDrawer">
               <td>
                 <div style="font-weight:600;max-width:44ch;">Same burden for the schools rose again — third week running for our huddle</div>
                 <div class="meta" style="margin-top:3px;">strategy · recorded by Denise M.</div>
@@ -287,7 +287,7 @@
 
     <!-- §13.4 Share as an encouragement -->
     <div class="eyebrow eyebrow--amethyst">Share as an encouragement</div>
-    <p style="margin:8px 0 0;color:var(--ink-soft);line-height:1.65;">A shareable confirmation can be sent to the leader it concerns — here, the principal the church has been praying for. This is always an explicit act, chosen by a person; nothing is ever sent automatically (CL-18).</p>
+    <p style="margin:8px 0 0;color:var(--ink-soft);line-height:1.65;">A shareable confirmation can be sent to the leader it concerns — here, the principal the church has been praying for. This is always an explicit act, chosen by a person; nothing is ever sent automatically.</p>
 
     <div class="card card--pad" style="margin-top:12px;">
       <div class="between">
@@ -298,7 +298,7 @@
       <div class="divider"></div>
       <div class="eyebrow">Review the wording before it goes</div>
       <textarea class="textarea" style="margin-top:8px;min-height:96px;">Dear Principal Hayes — as we've been praying for Burns Elementary, one passage kept coming up for us: Isaiah 61, "beauty for ashes." We wanted you to know your school is being prayed for, and that we sense real hope for your young people this term. — The prayer team, New Life Fellowship</textarea>
-      <div class="field__hint">The sender can edit this freely before sending — the encouragement should sound like the church, not the software (CL-20).</div>
+      <div class="field__hint">The sender can edit this freely before sending — the encouragement should sound like the church, not the software.</div>
     </div>
 
     <div class="inline" style="margin-top:14px;">

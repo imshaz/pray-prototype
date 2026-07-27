@@ -18,9 +18,15 @@
     try { var s = localStorage.getItem(NOTES_KEY); if (s !== null) stored = s; } catch (e) {}
     applyNotes(stored === '1');
     var t = document.querySelector('[data-notes-toggle]');
-    if (t) t.addEventListener('click', function () {
-      applyNotes(!document.body.classList.contains('notes-on'));
-    });
+    if (t) {
+      t.setAttribute('tabindex', '0');
+      t.addEventListener('click', function () {
+        applyNotes(!document.body.classList.contains('notes-on'));
+      });
+      t.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t.click(); }
+      });
+    }
   }
 
   /* ---- Persona switcher ------------------------------------------------ */
@@ -139,6 +145,16 @@
       var card = i.closest('.check');
       var sync = function () { if (card) card.classList.toggle('is-on', i.checked); };
       i.addEventListener('change', sync); sync();
+    });
+    // Radio groups: selecting one clears the others' active state.
+    document.querySelectorAll('.check input[type=radio]').forEach(function (i) {
+      var card = i.closest('.check');
+      if (card) card.classList.toggle('is-on', i.checked);
+      i.addEventListener('change', function () {
+        document.querySelectorAll('.check input[type=radio][name="' + i.name + '"]').forEach(function (r) {
+          var c = r.closest('.check'); if (c) c.classList.toggle('is-on', r.checked);
+        });
+      });
     });
   }
 

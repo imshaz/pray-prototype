@@ -8,33 +8,39 @@
 
 /* ---- Tokens ------------------------------------------------------------- */
 :root {
-  --ink:        #1B1725;
-  --ink-soft:   #4A4458;
-  --ink-faint:  #857E92;
+  /* Charleston United tenant brand — Void / Paper / Stone / Concrete + Klein Blue.
+     Klein Blue is the only loud colour; used for actions, active states and energy
+     marks. Accent washes/statuses run neutral so the blue stays deliberate. */
+  --ink:        #050505;   /* Void — text, structure */
+  --ink-soft:   #46474C;   /* secondary body */
+  --ink-faint:  #8C8F96;   /* Concrete-ish — meta, timestamps, muted */
 
-  --paper:      #FBFAF7;
-  --vellum:     #F3F0EA;
-  --vellum-edge:#E7E2D8;
-  --line:       #E4DFD6;
-  --line-strong:#D6D0C4;
+  --paper:      #FAFAF9;   /* Stone Light — page background */
+  --vellum:     #F2F2F2;   /* Paper — panels */
+  --vellum-edge:#E3E3E4;
+  --line:       #E5E5E7;
+  --line-strong:#D5D6D9;
   --surface:    #FFFFFF;
 
-  --amethyst:      #6D4AA6;
-  --amethyst-deep: #4C3378;
-  --amethyst-wash: #F0EBF7;
+  /* "accent" hue now runs NEUTRAL (grayscale) — was the violet ministry hue */
+  --amethyst:      #55585F;
+  --amethyst-deep: #33363B;
+  --amethyst-wash: #EEEFF1;
 
+  /* Klein Blue — the one energy colour */
   --klein:      #2563EB;
   --klein-deep: #1D4FD7;
   --klein-wash: #EAF0FE;
 
-  --gilt:       #A9823F;
+  /* austere ink accent for the printed artifacts (was gilt/brass) */
+  --gilt:       #050505;
 
-  --sage:       #4F7A5B;
-  --sage-wash:  #E9F1EA;
-  --amber:      #A96A1B;
-  --amber-wash: #F8EEDA;
-  --rose:       #A6455B;
-  --rose-wash:  #F7E9EC;
+  --sage:       #2F7D57;
+  --sage-wash:  #E7F1EB;
+  --amber:      #9A6B1B;
+  --amber-wash: #F6EDD9;
+  --rose:       #B03A4B;
+  --rose-wash:  #F7E7EA;
 
   --shadow-sm: 0 1px 2px rgba(27,23,37,.06);
   --shadow:    0 2px 8px rgba(27,23,37,.08), 0 1px 2px rgba(27,23,37,.04);
@@ -90,11 +96,11 @@ h1,h2,h3,h4 { line-height: 1.15; font-weight: 600; }
 
 /* ---- Sidebar ------------------------------------------------------------ */
 .sidebar {
-  background: linear-gradient(178deg, #221B33 0%, #191325 100%);
-  color: #E9E4F2;
+  background: linear-gradient(178deg, #1C1917 0%, #050505 100%);
+  color: #E7E6E3;
   display: flex; flex-direction: column;
   position: sticky; top: 0; height: 100vh;
-  border-right: 1px solid #2E2740;
+  border-right: 1px solid #262322;
 }
 .brand {
   display: flex; align-items: center; gap: 11px;
@@ -102,36 +108,36 @@ h1,h2,h3,h4 { line-height: 1.15; font-weight: 600; }
   border-bottom: 1px solid rgba(255,255,255,.07);
 }
 .brand__mark {
-  width: 34px; height: 34px; border-radius: 8px; flex: none;
-  display: grid; place-items: center;
-  background: linear-gradient(150deg, var(--amethyst), var(--amethyst-deep));
-  color: #fff; font-family: var(--serif); font-weight: 700; font-size: 18px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.25);
+  width: 34px; height: 34px; flex: none;
+  background: url(icon_mark_color.svg) center/contain no-repeat;
+  color: transparent; /* hides the fallback glyph in the markup */
+  border-radius: 0; box-shadow: none;
 }
-.brand__name { font-family: var(--serif); font-weight: 700; font-size: 16px; letter-spacing: .01em; color: #fff; }
-.brand__sub  { font: 600 9.5px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #A79BC4; margin-top: 3px; }
+.sidebar .brand__mark { background-image: url(icon_mark_white.svg); }
+.brand__name { font-family: var(--serif); font-weight: 700; font-size: 16px; letter-spacing: -.02em; color: #fff; }
+.brand__sub  { font: 600 9.5px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #9CA3AF; margin-top: 3px; }
 
 .nav { flex: 1; overflow-y: auto; padding: 14px 12px 20px; }
 .nav__group { margin-bottom: 6px; }
 .nav__label {
   font: 600 10px/1 var(--sans); letter-spacing: .15em; text-transform: uppercase;
-  color: #8579A6; padding: 14px 10px 7px;
+  color: #7C7A77; padding: 14px 10px 7px;
 }
 .nav__item {
   display: flex; align-items: center; gap: 10px;
   padding: 8px 11px; border-radius: 7px; margin: 1px 0;
-  color: #C9C1DC; font-size: 13.5px; font-weight: 500;
+  color: #C6C4C0; font-size: 13.5px; font-weight: 500;
   cursor: pointer; transition: background .14s, color .14s;
 }
-.nav__item svg { width: 17px; height: 17px; flex: none; opacity: .82; }
+.nav__item svg { width: 17px; height: 17px; flex: none; opacity: .78; }
 .nav__item:hover { background: rgba(255,255,255,.06); color: #fff; }
-.nav__item.is-active { background: rgba(109,74,166,.32); color: #fff; box-shadow: inset 2px 0 0 var(--amethyst); }
+.nav__item.is-active { background: rgba(37,99,235,.20); color: #fff; box-shadow: inset 2px 0 0 var(--klein); }
 .nav__item.is-active svg { opacity: 1; }
 .nav__badge {
   margin-left: auto; font: 600 10.5px/1 var(--mono);
-  background: var(--amethyst); color:#fff; padding: 3px 6px; border-radius: 20px;
+  background: var(--klein); color:#fff; padding: 3px 6px; border-radius: 20px;
 }
-.nav__foot { padding: 12px 16px; border-top: 1px solid rgba(255,255,255,.07); font-size: 11px; color: #8579A6; }
+.nav__foot { padding: 12px 16px; border-top: 1px solid rgba(255,255,255,.07); font-size: 11px; color: #7C7A77; }
 
 /* ---- Topbar ------------------------------------------------------------- */
 .main { display: flex; flex-direction: column; min-width: 0; }
@@ -170,8 +176,8 @@ body.notes-on .notes-toggle .dot { background: var(--amethyst); }
 /* ---- Sim banner --------------------------------------------------------- */
 .simbar {
   display: flex; align-items: center; gap: 10px; justify-content: center;
-  background: repeating-linear-gradient(45deg, #221B33, #221B33 12px, #1E182D 12px, #1E182D 24px);
-  color: #D9D0EC; font-size: 11.5px; font-weight: 500; letter-spacing: .02em;
+  background: repeating-linear-gradient(45deg, #1C1917, #1C1917 12px, #141210 12px, #141210 24px);
+  color: #CFCDC9; font-size: 11.5px; font-weight: 500; letter-spacing: .02em;
   padding: 6px 16px; text-align: center;
 }
 .simbar b { color: #fff; }
@@ -206,8 +212,8 @@ body.notes-on .notes-toggle .dot { background: var(--amethyst); }
 .btn svg { width: 16px; height: 16px; }
 .btn--primary { background: var(--klein); color: #fff; box-shadow: var(--shadow-sm); }
 .btn--primary:hover { background: var(--klein-deep); }
-.btn--ministry { background: var(--amethyst); color: #fff; box-shadow: var(--shadow-sm); }
-.btn--ministry:hover { background: var(--amethyst-deep); }
+.btn--ministry { background: var(--klein); color: #fff; box-shadow: var(--shadow-sm); }
+.btn--ministry:hover { background: var(--klein-deep); }
 .btn--ghost { background: var(--surface); border-color: var(--line-strong); color: var(--ink); }
 .btn--ghost:hover { border-color: var(--ink-faint); background: var(--vellum); }
 .btn--quiet { background: transparent; color: var(--ink-soft); padding: 8px 10px; }
@@ -317,7 +323,7 @@ body.notes-on .notes-toggle .dot { background: var(--amethyst); }
 .tabs { display: flex; gap: 3px; border-bottom: 1px solid var(--line-strong); margin-bottom: 20px; }
 .tab { padding: 11px 15px; font-weight: 600; font-size: 13.5px; color: var(--ink-faint); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; }
 .tab:hover { color: var(--ink); }
-.tab.is-on { color: var(--amethyst-deep); border-bottom-color: var(--amethyst); }
+.tab.is-on { color: var(--klein-deep); border-bottom-color: var(--klein); }
 
 /* ---- Annotation notes (client explainers) ------------------------------- */
 .note {
@@ -381,19 +387,17 @@ body.notes-on .note { display: block; }
 
 /* ---- Paper artifact (the signature: guide + prayer sheet) --------------- */
 .paper-doc {
-  background:
-    linear-gradient(var(--surface), var(--surface)) padding-box,
-    linear-gradient(180deg, #EFE7D5, #E4D9C0) border-box;
-  border: 1px solid transparent;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
   border-radius: 3px;
-  box-shadow: var(--shadow), 0 0 0 1px rgba(169,130,63,.12);
+  box-shadow: var(--shadow);
   padding: 44px 52px;
   position: relative;
   max-width: 640px;
 }
 .paper-doc::before {
-  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
-  background: linear-gradient(180deg, var(--gilt), #C9A662); border-radius: 3px 0 0 3px;
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--klein); border-radius: 3px 0 0 3px;
 }
 .paper-doc__kicker { font: 600 11px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--gilt); text-align: center; }
 .paper-doc__title { font-family: var(--serif); font-weight: 700; font-size: 30px; text-align: center; margin: 10px 0 6px; letter-spacing: -.01em; }
@@ -406,11 +410,11 @@ body.notes-on .note { display: block; }
 /* ---- Focus cycle (weekly rotation) -------------------------------------- */
 .cycle { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .cycle__wk { border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); padding: 15px; position: relative; overflow: hidden; }
-.cycle__wk.is-current { border-color: var(--amethyst); box-shadow: 0 0 0 3px var(--amethyst-wash); }
+.cycle__wk.is-current { border-color: var(--klein); box-shadow: 0 0 0 3px var(--klein-wash); }
 .cycle__n { font: 600 10px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); }
 .cycle__region { font-family: var(--serif); font-size: 18px; font-weight: 600; margin: 8px 0 3px; }
 .cycle__way { font-size: 12.5px; color: var(--amethyst-deep); font-weight: 500; }
-.cycle__wk.is-current::after { content: "This week"; position: absolute; top: 10px; right: -26px; transform: rotate(45deg); background: var(--amethyst); color: #fff; font: 600 9px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; padding: 4px 30px; }
+.cycle__wk.is-current::after { content: "This week"; position: absolute; top: 10px; right: -26px; transform: rotate(45deg); background: var(--klein); color: #fff; font: 600 9px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; padding: 4px 30px; }
 
 /* ---- Timeline / list rows ---------------------------------------------- */
 .rows { display: flex; flex-direction: column; }

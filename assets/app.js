@@ -190,6 +190,19 @@
     });
   }
 
+  /* ---- In-page sidebar nav (single-page persona views) ----------------- */
+  // Sidebar items that link to an on-page anchor set themselves active on click.
+  function initAnchorNav() {
+    var items = document.querySelectorAll('.nav__item[href^="#"]');
+    items.forEach(function (a) {
+      a.addEventListener('click', function () {
+        items.forEach(function (x) { x.classList.toggle('is-active', x === a); });
+        var sb = document.querySelector('.sidebar');
+        if (sb && window.innerWidth <= 860) sb.classList.remove('is-open');
+      });
+    });
+  }
+
   /* ---- Print ----------------------------------------------------------- */
   function initPrint() {
     document.querySelectorAll('[data-print]').forEach(function (b) {
@@ -200,7 +213,7 @@
   /* ---- Boot ------------------------------------------------------------ */
   document.addEventListener('DOMContentLoaded', function () {
     initNotes(); initPersona(); initMenu(); initTabs(); initSeg();
-    initCheckCards(); initActions(); initPublicForm(); initPrint();
+    initCheckCards(); initActions(); initPublicForm(); initAnchorNav(); initPrint();
   });
 
   // expose a couple for inline use if ever needed

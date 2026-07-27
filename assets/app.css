@@ -192,7 +192,7 @@ body.notes-on .notes-toggle .dot { background: var(--amethyst); }
 .page-sub { color: var(--ink-soft); font-size: 15px; margin-top: 6px; max-width: 66ch; }
 .page-head-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 
-.section { margin-top: 30px; }
+.section { margin-top: 30px; scroll-margin-top: 78px; }
 .section__head { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin-bottom: 13px; }
 .section__title { font-family: var(--serif); font-size: 21px; font-weight: 600; }
 

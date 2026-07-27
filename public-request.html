@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Request Prayer — Pray Charleston</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  .pr-hero { text-align:center; max-width:600px; margin:0 auto 30px; }
+  .pr-hero .mk { width:52px;height:52px;border-radius:13px;display:inline-grid;place-items:center;background:linear-gradient(150deg,var(--amethyst),var(--amethyst-deep));color:#fff;font-family:var(--serif);font-weight:700;font-size:27px;box-shadow:inset 0 1px 0 rgba(255,255,255,.25);}
+  .pr-hero h1 { font-family:var(--serif); font-weight:700; font-size:clamp(30px,4.5vw,42px); letter-spacing:-.01em; margin-top:20px; }
+  .pr-hero p { color:var(--ink-soft); font-size:16.5px; margin-top:12px; line-height:1.6; }
+  .pr-card { width:min(600px,100%); }
+  .done { text-align:center; padding:16px 8px 8px; }
+  .done__seal { width:72px;height:72px;border-radius:50%;background:var(--sage-wash);color:var(--sage);display:grid;place-items:center;margin:0 auto 18px; }
+  .done__seal svg { width:34px;height:34px; }
+  .done h2 { font-family:var(--serif); font-size:28px; font-weight:700; }
+  .done p { color:var(--ink-soft); max-width:44ch; margin:10px auto 0; font-size:15px; line-height:1.6; }
+  .fieldrow { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .toggle-row { display:flex; gap:12px; }
+  .toggle-row .check { flex:1; }
+  @media (max-width:560px){ .fieldrow,.toggle-row{grid-template-columns:1fr;flex-direction:column;} }
+</style>
+</head>
+<body>
+<div class="simbar">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+  <span><b>Simulation.</b> This is how the public request page looks at a community's own web address. Submitting shows the confirmation — nothing is sent.</span>
+</div>
+
+<div class="public-shell">
+  <div class="public-top">
+    <div class="brand__mark" style="width:32px;height:32px;font-size:17px;">✦</div>
+    <div>
+      <div style="font-family:var(--serif);font-weight:700;font-size:15px;">Pray Charleston</div>
+      <div class="meta" style="font-size:11px;">charleston.thrivingcommunities.io/pray</div>
+    </div>
+    <div class="right">
+      <label class="notes-toggle" data-notes-toggle role="button" aria-pressed="true">
+        <span class="dot"></span> Show notes
+      </label>
+    </div>
+  </div>
+
+  <div class="public-wrap">
+    <div class="pr-card">
+
+      <!-- FORM -->
+      <div data-form-view>
+        <div class="pr-hero">
+          <div class="mk">✦</div>
+          <h1>Ask for prayer</h1>
+          <p>Tell us what you'd like prayer for. Someone in a church near you will pray over it. You don't need an account, and you can share as little as you like.</p>
+        </div>
+
+        <div class="note" style="max-width:600px;margin:0 auto 18px;">
+          <b>Why this screen matters.</b> This replaces the website form that never worked. It's also the first place the platform accepts anything from a person who isn't logged in — so it carries spam protection, and everything submitted is reviewed before any pray-er sees it. <b>The address bar shows the community's own domain</b> — a "Pray Columbia" would see its own name and address here (T-14).
+        </div>
+
+        <div class="card card--pad pr-card">
+          <form data-prayer-form>
+            <div class="field">
+              <label class="field__label" for="req">What would you like prayer for? <span style="color:var(--rose)">*</span></label>
+              <textarea class="textarea" id="req" required placeholder="Share as much or as little as you want…"></textarea>
+              <div class="field__hint">This is the only required field. Everything below is optional.</div>
+            </div>
+
+            <div class="fieldrow">
+              <div class="field">
+                <label class="field__label" for="nm">Your name <span class="field__opt">optional</span></label>
+                <input class="input" id="nm" placeholder="First name is fine">
+              </div>
+              <div class="field">
+                <label class="field__label" for="area">Neighbourhood or city <span class="field__opt">optional</span></label>
+                <input class="input" id="area" placeholder="e.g. West Ashley">
+              </div>
+            </div>
+
+            <div class="fieldrow">
+              <div class="field">
+                <label class="field__label" for="em">Email <span class="field__opt">optional</span></label>
+                <input class="input" id="em" type="email" placeholder="So we can follow up">
+              </div>
+              <div class="field">
+                <label class="field__label" for="ph">Phone <span class="field__opt">optional</span></label>
+                <input class="input" id="ph" placeholder="Only if you'd like a call">
+              </div>
+            </div>
+
+            <div class="note" style="margin-top:4px;">
+              <b>How location is used.</b> If a neighbourhood is given, the system suggests the nearest participating church so a request reaches a congregation near the person — but a human always confirms the routing (PR-10, PR-11). Contact details are never shown to pray-ers, only to whoever handles follow-up (X-9).
+            </div>
+
+            <div class="field">
+              <label class="field__label">A few things, so we handle this right</label>
+              <div class="stack">
+                <label class="check">
+                  <input type="checkbox">
+                  <span><span class="check__title">This is urgent</span><span class="check__desc">We'll flag it for immediate attention rather than the normal queue.</span></span>
+                </label>
+                <label class="check">
+                  <input type="checkbox">
+                  <span><span class="check__title">I'd like someone to follow up with me</span><span class="check__desc">Requires an email or phone number above.</span></span>
+                </label>
+                <label class="check">
+                  <input type="checkbox">
+                  <span><span class="check__title">You may share this request with pray-ers</span><span class="check__desc">Without your contact details. Left unticked, only the ministry and the assigned church see it.</span></span>
+                </label>
+              </div>
+              <div class="note" style="margin-top:12px;">
+                <b>Private by default.</b> A request is seen only by the ministry and the assigned church unless the person ticks the sharing box. Nothing widens visibility automatically (X-8).
+              </div>
+            </div>
+
+            <div class="between" style="margin-top:22px;">
+              <div class="meta" style="display:flex;align-items:center;gap:7px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Protected against spam · reviewed before anyone prays
+              </div>
+              <button type="submit" class="btn btn--ministry btn--lg">Send prayer request</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- CONFIRMATION -->
+      <div data-done-view style="display:none;">
+        <div class="card card--pad">
+          <div class="done">
+            <div class="done__seal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <h2>Your request has been received</h2>
+            <p>Thank you for trusting us with this. It's now with the Pray Charleston ministry, who will make sure a church near you prays over it. If you left an email, you'll get a short confirmation there too.</p>
+            <div class="note" style="text-align:left;margin:22px auto 0;max-width:46ch;">
+              <b>What just happened (simulated).</b> On the real page the person sees this immediately (PR-4), an emailed confirmation follows if they gave an address (PR-5), and the request lands in the ministry's inbox as <b>New</b> — awaiting review and routing. Open the <b>Requests inbox</b> as Ministry Admin to see the other side.
+            </div>
+            <div class="inline" style="justify-content:center;margin-top:24px;">
+              <button class="btn btn--ghost" data-form-reset>Submit another request</button>
+              <a class="btn btn--primary" href="admin-requests.html">See the ministry's inbox →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="meta" style="text-align:center;margin-top:22px;">
+        Pray Charleston is the prayer ministry of Charleston United · one community on the Thriving Communities platform
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

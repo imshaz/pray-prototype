@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Church Leader — Pray Charleston</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body class="notes-on">
+<div class="simbar">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+  <span><b>Interactive prototype.</b> This is one church's view — East Cooper Baptist only. Use the persona switcher (top-right) to change role, and "Show notes" for explanations.</span>
+</div>
+
+<div class="app">
+  <!-- ============ SIDEBAR (church leader — lighter, own church only) ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__mark">✝</div>
+      <div>
+        <div class="brand__name">East Cooper Baptist</div>
+        <div class="brand__sub">Church Leader</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav__group">
+        <div class="nav__label">Our church</div>
+        <a class="nav__item is-active" href="leader.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg> My congregation</a>
+        <a class="nav__item" href="leader.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> This month's guide</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Requests</div>
+        <a class="nav__item" href="leader.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Prayer requests for us <span class="nav__badge">3</span></a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">People</div>
+        <a class="nav__item" href="leader.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg> Our recorder</a>
+        <a class="nav__item" href="leader.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Gatherings</a>
+      </div>
+    </nav>
+    <div class="nav__foot">Thriving Communities · Pray Charleston · one of 47 churches</div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+    <div class="topbar">
+      <button class="menu-btn" data-menu-btn aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+      <div class="topbar__crumb"><b>Church Leader</b> · East Cooper Baptist</div>
+      <div class="topbar__spacer"></div>
+      <label class="notes-toggle" data-notes-toggle role="button" aria-pressed="true"><span class="dot"></span> Show notes</label>
+      <div class="persona">
+        <span class="persona__label">Viewing as</span>
+        <select data-persona aria-label="Switch persona">
+          <option value="public">Public</option>
+          <option value="admin">Ministry Admin</option>
+          <option value="leader" selected>Church Leader</option>
+          <option value="recorder">Recorder</option>
+          <option value="prayer">Pray-er</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-head">
+        <div class="page-head-row">
+          <div>
+            <div class="eyebrow eyebrow--amethyst">Mount Pleasant · March</div>
+            <h1 class="page-title">East Cooper Baptist</h1>
+            <p class="page-sub">Your congregation's corner of Pray Charleston, Mount Pleasant.</p>
+          </div>
+          <div class="inline">
+            <button class="btn btn--ghost" data-action="toast:Opening this month's guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Read the guide</button>
+            <button class="btn btn--ministry" data-action="toast:Guide shared with your 34 pray-ers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> Share the guide</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>A church is an organisation in the community, not a separate prayer roster.</b> Your pray-ers <i>are</i> East Cooper Baptist's existing members — the same people already in your church, now praying together through Pray Charleston (§4). You appear among them yourself, because a leader is also a pray-er (ON-11). And you only ever see your own church here — never another congregation's people or requests.
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid--3" style="margin-top:18px;">
+        <div class="stat">
+          <div class="stat__label">Your pray-ers</div>
+          <div class="stat__value">34</div>
+          <div class="stat__delta flat">members of East Cooper Baptist</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Prayed this month</div>
+          <div class="stat__value">28 <small>/ 34</small></div>
+          <div class="stat__delta up">▲ 6 more than February</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Requests assigned to us</div>
+          <div class="stat__value">3</div>
+          <div class="stat__delta flat">1 new · 2 being prayed</div>
+        </div>
+      </div>
+
+      <!-- ============ This month's guide ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">This month's guide</div>
+          <span class="meta">published 6 days ago</span>
+        </div>
+        <div class="card card--pad">
+          <div class="between" style="align-items:flex-start;flex-wrap:wrap;gap:18px;">
+            <div style="max-width:52ch;">
+              <div class="eyebrow" style="color:var(--gilt);">March · Pray Charleston</div>
+              <div class="serif" style="font-size:24px;font-weight:600;margin:6px 0 4px;">His Faithfulness — praying for Mount Pleasant</div>
+              <div class="soft">The ministry has published March's guide for the whole community. Share it with your congregation in one action, or open it to read first.</div>
+              <div class="inline" style="margin-top:16px;">
+                <button class="btn btn--ministry" data-action="toast:Guide shared with your 34 pray-ers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> Share with my 34 pray-ers</button>
+                <button class="btn btn--ghost" data-action="toast:Opening the March guide">Read it</button>
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <span class="pill pill--praying"><span class="pdot"></span>Not yet shared</span>
+            </div>
+          </div>
+        </div>
+        <div class="note note--sim">
+          <b>One action reaches everyone.</b> "Share with my 34 pray-ers" is the leader's single-step share (GD-9) — you don't forward it person by person. And if a leader stays quiet, the ministry can still reach this congregation directly (GD-10), so a silent leader never silences a whole church.
+        </div>
+      </div>
+
+      <!-- ============ Prayer requests for us ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Prayer requests for us</div>
+          <span class="meta">3 assigned to East Cooper Baptist</span>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr><th style="width:120px;">Stage</th><th>Request</th><th style="width:150px;">Received</th><th style="width:90px;"></th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="pill pill--new"><span class="pdot"></span>New</span></td>
+                <td><div class="row__title">A young family in the church facing eviction</div><div class="row__sub">Assigned to us for prayer and follow-up</div></td>
+                <td class="meta">2 hours ago</td>
+                <td><button class="btn btn--sm btn--ghost" data-action="toast:Opening request — eviction">Open</button></td>
+              </tr>
+              <tr>
+                <td><span class="pill pill--praying"><span class="pdot"></span>Praying</span></td>
+                <td><div class="row__title">Surgery for a member's father this week</div><div class="row__sub">Being prayed over by the congregation</div></td>
+                <td class="meta">3 days ago</td>
+                <td><button class="btn btn--sm btn--ghost" data-action="toast:Opening request — surgery">Open</button></td>
+              </tr>
+              <tr>
+                <td><span class="pill pill--praying"><span class="pdot"></span>Praying</span></td>
+                <td><div class="row__title">A neighbour looking for work after a layoff</div><div class="row__sub">Being prayed over by the congregation</div></td>
+                <td class="meta">1 week ago</td>
+                <td><button class="btn btn--sm btn--ghost" data-action="toast:Opening request — work">Open</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">
+          <b>You and your recorder can work these together.</b> Leaders and their recorders may view and work the requests assigned to their church (PR-16). A requester's contact details appear only where they're needed for follow-up — never for browsing (X-9).
+        </div>
+      </div>
+
+      <!-- ============ Our recorder ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Our recorder</div>
+          <span class="meta">appointed by you</span>
+        </div>
+        <div class="card card--pad">
+          <div class="between" style="flex-wrap:wrap;gap:16px;">
+            <div class="who">
+              <div class="avatar">AW</div>
+              <div>
+                <div class="who__name">Ada Whitfield</div>
+                <div class="who__meta">Recorder · appointed Jan 2026 · member since 2019</div>
+              </div>
+            </div>
+            <div class="inline">
+              <button class="btn btn--sm btn--ghost" data-action="toast:Change recorder — choose a member">Change recorder</button>
+              <button class="btn btn--sm btn--quiet" data-action="toast:Recorder removed">Remove</button>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <p class="soft" style="font-size:13.5px;max-width:70ch;">
+            A recorder logs what your congregation senses in prayer for the church — themes, impressions, confirmations — so nothing is lost between gatherings. You appoint the recorder, and you can remove or replace them at any time (CL-1, CL-2).
+          </p>
+        </div>
+        <div class="note note--sim">
+          <b>The role is deliberately narrow.</b> Being a recorder grants only the ability to log and view <i>this church's</i> confirmations — no moderation, no access to other churches, no wider authority in the ministry (CL-3).
+        </div>
+      </div>
+
+      <!-- ============ My congregation ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">My congregation</div>
+          <div class="inline">
+            <span class="meta">34 pray-ers · showing 8</span>
+            <button class="btn btn--sm btn--ghost" data-action="toast:Message composed to your 34 pray-ers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> Message my pray-ers</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr><th>Pray-er</th><th style="width:150px;">Joined</th><th style="width:150px;">Last active</th><th style="width:120px;">Status</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="who"><div class="avatar">PE</div><div><div class="who__name">Pastor Ellison <span class="tag">You · also a pray-er</span></div><div class="who__meta">Church Leader</div></div></div></td>
+                <td class="meta">—</td>
+                <td class="meta">Today</td>
+                <td><span class="pill pill--active"><span class="pdot"></span>Active</span></td>
+              </tr>
+              <tr>
+                <td><div class="who"><div class="avatar avatar--sm">AW</div><div><div class="who__name">Ada Whitfield</div><div class="who__meta">Recorder</div></div></div></td>
+                <td class="meta">12 Jan 2026</td>
+                <td class="meta">Today</td>
+                <td><span class="pill pill--active"><span class="pdot"></span>Active</span></td>
+              </tr>
+              <tr>
+                <td><div class="who"><div class="avatar avatar--sm">MC</div><div class="who__name">Marcus Cole</div></div></td>
+                <td class="meta">4 Feb 2026</td>
+                <td class="meta">Yesterday</td>
+                <td><span class="pill pill--active"><span class="pdot"></span>Active</span></td>
+              </tr>
+              <tr>
+                <td><div class="who"><div class="avatar avatar--sm">JR</div><div class="who__name">Joanna Reyes</div></div></td>
+                <td class="meta">4 Feb 2026</td>
+                <td class="meta">2 days ago</td>
+                <td><span class="pill pill--active"><span class="pdot"></span>Active</span></td>
+              </tr>
+              <tr>
+                <td><div class="who"><div class="avatar avatar--sm">DT</div><div class="who__name">David Tran</div></div></td>
+                <td class="meta">18 Feb 2026</td>
+                <td class="meta">4 days ago</td>
+                <td><span class="pill pill--active"><span class="pdot"></span>Active</span></td>
+              </tr>
+              <tr>
+                <td><div class="who"><div class="avatar avatar--sm">GH</div><div class="who__name">Grace Holloway</div></div></td>
+                <td class="meta">18 Feb 2026</td>
+                <td class="meta">3 weeks ago</td>
+                <td><span class="pill pill--quiet"><span class="pdot"></span>Quiet</span></td>
+              </tr>
+              <tr>
+                <td><div class="who"><div class="avatar avatar--sm">SB</div><div class="who__name">Samuel Boykin</div></div></td>
+                <td class="meta">25 Feb 2026</td>
+                <td class="meta">Yesterday</td>
+                <td><span class="pill pill--active"><span class="pdot"></span>Active</span></td>
+              </tr>
+              <tr>
+                <td><div class="who"><div class="avatar avatar--sm">LN</div><div class="who__name">Lena Nkosi</div></div></td>
+                <td class="meta">2 Mar 2026</td>
+                <td class="meta">Over a month ago</td>
+                <td><span class="pill pill--quiet"><span class="pdot"></span>Quiet</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">
+          <b>You see your own members, and only theirs.</b> This is the congregation view a leader is given (ON-8) — names, when they joined, and how recently they've prayed. You appear at the top yourself, because you pray alongside them (ON-11). No other church's roster is ever visible from here.
+        </div>
+      </div>
+
+      <!-- ============ Upcoming gatherings ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Upcoming gatherings</div>
+          <span class="meta">2 upcoming</span>
+        </div>
+        <div class="card">
+          <div class="card__body" style="padding-top:8px;padding-bottom:8px;">
+            <div class="rows">
+              <div class="row">
+                <span class="pill pill--praying"><span class="pdot"></span>Community</span>
+                <div class="row__main">
+                  <div class="row__title">Monthly Holy Huddle</div>
+                  <div class="row__sub">Thu 14 Mar · 7:00 AM · online · recurring · 218 pray-ers across Charleston have RSVP'd</div>
+                </div>
+                <div class="inline">
+                  <span class="meta">9 from us</span>
+                  <button class="btn btn--sm btn--ghost" data-action="toast:RSVP'd to the Monthly Holy Huddle">RSVP</button>
+                </div>
+              </div>
+              <div class="row">
+                <span class="pill pill--active"><span class="pdot"></span>Our church</span>
+                <div class="row__main">
+                  <div class="row__title">Wednesday prayer</div>
+                  <div class="row__sub">Every Wed · 6:30 PM · East Cooper Baptist chapel · your congregation only</div>
+                </div>
+                <div class="inline">
+                  <span class="meta">17 from us</span>
+                  <button class="btn btn--sm btn--ghost" data-action="toast:RSVP'd to Wednesday prayer">RSVP</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="note note--sim">
+          <b>Two kinds of gathering sit side by side.</b> The Monthly Holy Huddle is a community-wide rhythm set by the ministry; Wednesday prayer belongs to East Cooper Baptist alone. Both are simulated here — the RSVP buttons show the flow without recording anything.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

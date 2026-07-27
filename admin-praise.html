@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Praise Report — Pray Charleston</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body class="notes-on">
+<div class="simbar">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+  <span><b>Interactive prototype.</b> Simulated data for review. Use the persona switcher (top-right) to change role, and "Show notes" for explanations.</span>
+</div>
+
+<div class="app">
+  <!-- ============ SIDEBAR (canonical — reused on all admin pages) ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__mark">✦</div>
+      <div>
+        <div class="brand__name">Pray Charleston</div>
+        <div class="brand__sub">Ministry Admin</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav__group">
+        <div class="nav__label">Overview</div>
+        <a class="nav__item" href="admin-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg> Dashboard</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Requests</div>
+        <a class="nav__item" href="admin-requests.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg> Prayer requests <span class="nav__badge">6</span></a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Publish</div>
+        <a class="nav__item" href="admin-guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Prayer guide</a>
+        <a class="nav__item" href="admin-focus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Focus calendar</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">People</div>
+        <a class="nav__item" href="admin-churches.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg> Churches &amp; leaders</a>
+        <a class="nav__item" href="admin-messaging.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg> Reaching people</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Insight</div>
+        <a class="nav__item" href="admin-confirmations.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Confirmation log</a>
+        <a class="nav__item is-active" href="admin-praise.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> Praise report</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Settings</div>
+        <a class="nav__item" href="admin-access.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Delegated access</a>
+        <a class="nav__item" href="admin-charleston.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg> Charleston launch</a>
+      </div>
+    </nav>
+    <div class="nav__foot">Thriving Communities · tenant: charleston</div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+    <div class="topbar">
+      <button class="menu-btn" data-menu-btn aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+      <div class="topbar__crumb"><b>Praise report</b></div>
+      <div class="topbar__spacer"></div>
+      <label class="notes-toggle" data-notes-toggle role="button" aria-pressed="true"><span class="dot"></span> Show notes</label>
+      <div class="persona">
+        <span class="persona__label">Viewing as</span>
+        <select data-persona aria-label="Switch persona">
+          <option value="public">Public</option>
+          <option value="admin" selected>Ministry Admin</option>
+          <option value="leader">Church Leader</option>
+          <option value="recorder">Recorder</option>
+          <option value="prayer">Pray-er</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-head">
+        <div class="page-head-row">
+          <div>
+            <div class="eyebrow eyebrow--amethyst">Insight · This community only</div>
+            <h1 class="page-title">Praise report</h1>
+            <p class="page-sub">Answered prayer and community indicators, side by side — ready for the website, socials, and the guide.</p>
+          </div>
+          <div class="inline">
+            <select class="select" aria-label="Reporting period" style="width:auto;padding:9px 34px 9px 13px;font-weight:600;font-size:13px;">
+              <option selected>Q1 2026</option>
+              <option>Q4 2025</option>
+              <option>Q3 2025</option>
+              <option>Full year 2025</option>
+            </select>
+            <button class="btn btn--ministry" data-print><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg> Export summary</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRR-10: the load-bearing constraint -->
+      <div class="note">
+        <b>What this report is careful never to say.</b> "Crime is down and we prayed" is testimony. "Crime is down <b>because</b> we prayed", printed beside a chart on a funding application, is a claim someone must defend. This report is built to make the honest version easy and the overclaiming version hard — prayer and indicators are shown <b>alongside</b> one another, never one as the cause of the other (PRR-10).
+      </div>
+
+      <!-- ============ Participation (PRR-9) ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Participation this period</div>
+          <span class="meta">Q1 2026 · Jan–Mar</span>
+        </div>
+        <div class="grid grid--4">
+          <div class="stat">
+            <div class="stat__label">Churches involved</div>
+            <div class="stat__value">47</div>
+            <div class="stat__delta up">▲ 3 joined this quarter</div>
+          </div>
+          <div class="stat">
+            <div class="stat__label">Pray-ers active</div>
+            <div class="stat__value">1,284</div>
+            <div class="stat__delta flat">of 1,309 signed up</div>
+          </div>
+          <div class="stat">
+            <div class="stat__label">Gatherings held</div>
+            <div class="stat__value">9</div>
+            <div class="stat__delta up">▲ 3 online huddles</div>
+          </div>
+          <div class="stat">
+            <div class="stat__label">Requests answered</div>
+            <div class="stat__value">22 <small>of 38</small></div>
+            <div class="stat__delta up">▲ 58% marked answered</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ Community indicators (PRR-1..PRR-4) ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Community indicators</div>
+          <span class="meta">3 tracked · every figure sourced</span>
+        </div>
+
+        <div class="note note--sim">
+          These indicators are defined by <b>this</b> community — Pray Charleston chose to watch these three. There is no built-in set. "Pray Columbia" would track its own measures — school attendance, overdose calls, whatever its ministry cares about (PRR-2).
+        </div>
+
+        <div class="grid grid--3" style="margin-top:14px;">
+
+          <!-- Indicator 1 — violent incidents (down = good) -->
+          <div class="card card--pad">
+            <div class="eyebrow">Public safety</div>
+            <div class="serif" style="font-size:19px;font-weight:600;margin:6px 0 12px;line-height:1.25;">Reported violent incidents<br><span class="muted" style="font-weight:500;">North Charleston</span></div>
+            <div class="between" style="align-items:flex-end;">
+              <div>
+                <div class="stat__value" style="font-size:34px;margin:0;">312</div>
+                <div class="stat__delta down">▼ 11% vs prior quarter</div>
+              </div>
+              <!-- hand-written sparkline: descending -->
+              <svg width="112" height="40" viewBox="0 0 112 40" fill="none" aria-hidden="true" style="overflow:visible;">
+                <polyline points="4,10 26,13 48,9 70,20 92,26 108,30" fill="none" stroke="#4F7A5B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="108" cy="30" r="3.2" fill="#4F7A5B"/>
+              </svg>
+            </div>
+            <div class="divider" style="margin:16px 0 12px;"></div>
+            <div class="meta">Source: SC Incident-Based Reporting (SLED), Feb 2026</div>
+          </div>
+
+          <!-- Indicator 2 — unsheltered count (down slightly) -->
+          <div class="card card--pad">
+            <div class="eyebrow">Housing</div>
+            <div class="serif" style="font-size:19px;font-weight:600;margin:6px 0 12px;line-height:1.25;">Unsheltered count<br><span class="muted" style="font-weight:500;">Tri-county</span></div>
+            <div class="between" style="align-items:flex-end;">
+              <div>
+                <div class="stat__value" style="font-size:34px;margin:0;">641</div>
+                <div class="stat__delta down">▼ 3% vs prior count</div>
+              </div>
+              <svg width="112" height="40" viewBox="0 0 112 40" fill="none" aria-hidden="true" style="overflow:visible;">
+                <polyline points="4,14 26,12 48,16 70,15 92,19 108,20" fill="none" stroke="#4F7A5B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="108" cy="20" r="3.2" fill="#4F7A5B"/>
+              </svg>
+            </div>
+            <div class="divider" style="margin:16px 0 12px;"></div>
+            <div class="meta">Source: Lowcountry Continuum of Care PIT count, Jan 2026</div>
+          </div>
+
+          <!-- Indicator 3 — youth disconnection (flat / slight down) -->
+          <div class="card card--pad">
+            <div class="eyebrow">Next generation</div>
+            <div class="serif" style="font-size:19px;font-weight:600;margin:6px 0 12px;line-height:1.25;">Youth disconnection rate<br><span class="muted" style="font-weight:500;">Ages 16–24, region</span></div>
+            <div class="between" style="align-items:flex-end;">
+              <div>
+                <div class="stat__value" style="font-size:34px;margin:0;">9.8%</div>
+                <div class="stat__delta flat">◆ roughly steady</div>
+              </div>
+              <svg width="112" height="40" viewBox="0 0 112 40" fill="none" aria-hidden="true" style="overflow:visible;">
+                <polyline points="4,18 26,17 48,19 70,17 92,18 108,17" fill="none" stroke="#857E92" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="108" cy="17" r="3.2" fill="#857E92"/>
+              </svg>
+            </div>
+            <div class="divider" style="margin:16px 0 12px;"></div>
+            <div class="meta">Source: U.S. Census ACS 5-yr, 2022</div>
+          </div>
+
+        </div>
+
+        <div class="note">
+          <b>Every figure carries its source, or it cannot be published (PRR-3).</b> The report simply refuses to print an unattributed number — the source line above each indicator is required, not decorative. A funder can check every one against its origin. Latest values and the direction of each trend follow the source's own reporting date, not the prayer period (PRR-4).
+        </div>
+      </div>
+
+      <!-- ============ Answered prayer (PRR-5, PRR-6) ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Answered prayer this period</div>
+          <span class="meta">5 shown · shareable only</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="width:38%">Request</th>
+                <th>Region</th>
+                <th>Answered</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="row__title" style="font-size:13.5px;">A family facing eviction found stable housing</div></td>
+                <td>West Ashley</td>
+                <td class="meta">18 Feb 2026</td>
+                <td><span class="inline"><span class="pill pill--answered"><span class="pdot"></span>Answered</span> <span class="pill pill--shared"><span class="pdot"></span>Shared</span></span></td>
+              </tr>
+              <tr>
+                <td><div class="row__title" style="font-size:13.5px;">A father out of work for months started a new job</div></td>
+                <td>North Charleston</td>
+                <td class="meta">27 Feb 2026</td>
+                <td><span class="inline"><span class="pill pill--answered"><span class="pdot"></span>Answered</span> <span class="pill pill--shared"><span class="pdot"></span>Shared</span></span></td>
+              </tr>
+              <tr>
+                <td><div class="row__title" style="font-size:13.5px;">A young man walked away from a violent circle</div></td>
+                <td>North Charleston</td>
+                <td class="meta">4 Mar 2026</td>
+                <td><span class="inline"><span class="pill pill--answered"><span class="pdot"></span>Answered</span> <span class="pill pill--shared"><span class="pdot"></span>Shared</span></span></td>
+              </tr>
+              <tr>
+                <td><div class="row__title" style="font-size:13.5px;">A grandmother's surgery went well and she is home</div></td>
+                <td>Summerville</td>
+                <td class="meta">9 Mar 2026</td>
+                <td><span class="inline"><span class="pill pill--answered"><span class="pdot"></span>Answered</span> <span class="pill pill--shared"><span class="pdot"></span>Shared</span></span></td>
+              </tr>
+              <tr>
+                <td><div class="row__title" style="font-size:13.5px;">A teenager reconciled with her family after months apart</div></td>
+                <td>Mount Pleasant</td>
+                <td class="meta">15 Mar 2026</td>
+                <td><span class="inline"><span class="pill pill--answered"><span class="pdot"></span>Answered</span> <span class="pill pill--shared"><span class="pdot"></span>Shared</span></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <b>Only what was cleared for sharing appears here (PRR-5, PRR-6).</b> These five are the answered requests whose submitters gave permission to share, and every contact detail has been stripped. Private requests and internal confirmations from the log <b>never</b> surface on this report — not even anonymised. If it wasn't cleared to share, it isn't here.
+        </div>
+      </div>
+
+      <!-- ============ Exported summary (PRR-7, PRR-11) ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Exported summary</div>
+          <div class="inline">
+            <button class="btn btn--quiet btn--sm" data-action="toast:Editing summary before export">Edit before export</button>
+            <button class="btn btn--ministry btn--sm" data-print><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg> Print / export</button>
+          </div>
+        </div>
+
+        <div class="note">
+          <b>The clean, shareable output (PRR-7).</b> This is the single artifact that goes to a funder, onto the website, or into the printed guide. It carries only what can be evidenced (PRR-11): sourced figures, permitted testimonies, and language that keeps prayer and indicators side by side. Try <b>Print / export</b>.
+        </div>
+
+        <div style="display:grid;place-items:center;margin-top:16px;">
+          <div class="paper-doc">
+            <div class="paper-doc__kicker">Pray Charleston · Q1 2026 · Jan–Mar</div>
+            <div class="paper-doc__title">Q1 Praise Report</div>
+            <div class="paper-doc__rule"></div>
+
+            <p style="text-align:center;color:var(--ink-soft);">
+              This quarter, 47 churches and 1,284 pray-ers across the tri-county region gathered nine times
+              to pray for our neighborhoods, our young people, and one another. Below is what we have seen answered,
+              and — separately, and honestly — how a few community measures have moved over the same season.
+            </p>
+
+            <h4>✦ How we prayed together</h4>
+            <p>
+              <b>47</b> churches involved &nbsp;·&nbsp; <b>1,284</b> pray-ers active &nbsp;·&nbsp; <b>9</b> gatherings held
+              &nbsp;·&nbsp; <b>22 of 38</b> requests marked answered.
+            </p>
+
+            <h4>Answered prayer, shared with permission</h4>
+            <p>
+              — A family in West Ashley facing eviction found stable housing after their request went out to the region.<br>
+              — In North Charleston, a father out of work for months started a new job this quarter.
+            </p>
+            <p style="font-style:italic;color:var(--ink-faint);font-size:13.5px;">
+              Shared with permission and without any contact details. Private requests are not included.
+            </p>
+
+            <h4>Community measures this season</h4>
+            <p>Presented for context, each with its source:</p>
+            <p style="font-size:14px;">
+              — Reported violent incidents, North Charleston: <b>312</b>, down 11% vs the prior quarter.<br>
+              <span class="meta">Source: SC Incident-Based Reporting (SLED), Feb 2026</span><br><br>
+              — Unsheltered count, tri-county: <b>641</b>, down 3% vs the prior count.<br>
+              <span class="meta">Source: Lowcountry Continuum of Care PIT count, Jan 2026</span><br><br>
+              — Youth disconnection rate, ages 16–24: <b>9.8%</b>, roughly steady.<br>
+              <span class="meta">Source: U.S. Census ACS 5-yr, 2022</span>
+            </p>
+
+            <div class="paper-doc__rule"></div>
+            <p style="text-align:center;font-style:italic;color:var(--ink);">
+              We present our prayers and these community measures <b>side by side</b>. We do not claim that one caused the other —
+              we give thanks for what we have seen, and we keep watching, together.
+            </p>
+
+            <div style="text-align:center;margin-top:20px;">
+              <div class="meta" style="color:var(--gilt);">✦ &nbsp; charleston.thrivingcommunities.io/pray &nbsp; ✦</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

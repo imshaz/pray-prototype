@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Prayer Requests — Pray Charleston</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body class="notes-on">
+<div class="simbar">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+  <span><b>Interactive prototype.</b> Click a request row to open it. Routing, stage changes and notes are simulated.</span>
+</div>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand__mark">✦</div><div><div class="brand__name">Pray Charleston</div><div class="brand__sub">Ministry Admin</div></div></div>
+    <nav class="nav">
+      <div class="nav__group"><div class="nav__label">Overview</div>
+        <a class="nav__item" href="admin-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg> Dashboard</a></div>
+      <div class="nav__group"><div class="nav__label">Requests</div>
+        <a class="nav__item is-active" href="admin-requests.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg> Prayer requests <span class="nav__badge">6</span></a></div>
+      <div class="nav__group"><div class="nav__label">Publish</div>
+        <a class="nav__item" href="admin-guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Prayer guide</a>
+        <a class="nav__item" href="admin-focus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Focus calendar</a></div>
+      <div class="nav__group"><div class="nav__label">People</div>
+        <a class="nav__item" href="admin-churches.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg> Churches &amp; leaders</a>
+        <a class="nav__item" href="admin-messaging.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> Reaching people</a></div>
+      <div class="nav__group"><div class="nav__label">Insight</div>
+        <a class="nav__item" href="admin-confirmations.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg> Confirmation log</a>
+        <a class="nav__item" href="admin-praise.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> Praise report</a></div>
+      <div class="nav__group"><div class="nav__label">Settings</div>
+        <a class="nav__item" href="admin-access.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Delegated access</a>
+        <a class="nav__item" href="admin-charleston.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg> Charleston launch</a></div>
+    </nav>
+    <div class="nav__foot">Thriving Communities · tenant: charleston</div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <button class="menu-btn" data-menu-btn aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+      <div class="topbar__crumb"><b>Prayer requests</b></div>
+      <div class="topbar__spacer"></div>
+      <label class="notes-toggle" data-notes-toggle role="button" aria-pressed="true"><span class="dot"></span> Show notes</label>
+      <div class="persona"><span class="persona__label">Viewing as</span>
+        <select data-persona aria-label="Switch persona">
+          <option value="public">Public</option><option value="admin" selected>Ministry Admin</option>
+          <option value="leader">Church Leader</option><option value="recorder">Recorder</option><option value="prayer">Pray-er</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-head">
+        <div class="page-head-row">
+          <div>
+            <h1 class="page-title">Prayer requests</h1>
+            <p class="page-sub">Everything submitted to Pray Charleston — from the public form and from pray-ers. Route each to a church and walk it to answered.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>The other side of the public form.</b> A request arrives as <b>New</b>, gets <b>routed</b> to a church (the system suggests the nearest one, a person confirms), then moves <b>New → Being prayed over → Answered</b>. Contact details stay hidden from pray-ers; only people who can work the request see them (§9.3, X-9). Click any row to open it.
+      </div>
+
+      <!-- Filters -->
+      <div class="between" style="margin:18px 0 14px;flex-wrap:wrap;gap:12px;">
+        <div class="tabs" style="border:none;margin:0;" data-filter-target="#reqRows">
+          <div class="tab is-on" data-filter="all">All <span class="meta" style="margin-left:4px;">10</span></div>
+          <div class="tab" data-filter="new">New <span class="meta" style="margin-left:4px;">3</span></div>
+          <div class="tab" data-filter="praying">Being prayed over <span class="meta" style="margin-left:4px;">3</span></div>
+          <div class="tab" data-filter="answered">Answered <span class="meta" style="margin-left:4px;">4</span></div>
+        </div>
+        <div class="inline">
+          <div class="seg">
+            <button class="is-on">All churches</button>
+            <button>Central inbox</button>
+          </div>
+          <div class="input" style="width:210px;display:flex;align-items:center;gap:8px;color:var(--ink-faint);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg> Search requests</div>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Request</th><th>Location</th><th>Assigned church</th><th>Stage</th><th>Age</th></tr></thead>
+          <tbody id="reqRows">
+            <tr class="row-click" data-stage="new" data-action="drawer:reqDrawer">
+              <td>
+                <div class="inline" style="gap:8px;"><span class="pill pill--urgent"><span class="pdot"></span>Urgent</span></div>
+                <div style="font-weight:600;margin-top:6px;">A family facing eviction, three children, needs prayer and help fast</div>
+                <div class="meta" style="margin-top:3px;">from the public form · follow-up requested</div>
+              </td>
+              <td>West Ashley</td>
+              <td><span class="pill pill--outline">Needs routing</span></td>
+              <td><span class="pill pill--new"><span class="pdot"></span>New</span></td>
+              <td class="meta">2h</td>
+            </tr>
+            <tr class="row-click" data-stage="new" data-action="drawer:reqDrawer">
+              <td><div style="font-weight:600;">Please pray for peace in our neighbourhood after the shooting</div><div class="meta" style="margin-top:3px;">shareable</div></td>
+              <td>Downtown</td>
+              <td><span class="pill pill--outline">Central inbox</span></td>
+              <td><span class="pill pill--new"><span class="pdot"></span>New</span></td>
+              <td class="meta">1d</td>
+            </tr>
+            <tr class="row-click" data-stage="new" data-action="drawer:reqDrawer">
+              <td><div style="font-weight:600;">Marriage under strain, asking for wisdom</div><div class="meta" style="margin-top:3px;">private</div></td>
+              <td>—</td>
+              <td><span class="pill pill--outline">Central inbox</span></td>
+              <td><span class="pill pill--new"><span class="pdot"></span>New</span></td>
+              <td class="meta">3d</td>
+            </tr>
+            <tr class="row-click" data-stage="praying" data-action="drawer:reqDrawer">
+              <td><div style="font-weight:600;">Prayer for my mother's surgery on Friday</div><div class="meta" style="margin-top:3px;">shareable · no contact given</div></td>
+              <td>Mount Pleasant</td>
+              <td><span class="tag">East Cooper Baptist</span></td>
+              <td><span class="pill pill--praying"><span class="pdot"></span>Being prayed over</span></td>
+              <td class="meta">1d</td>
+            </tr>
+            <tr class="row-click" data-stage="praying" data-action="drawer:reqDrawer">
+              <td><div style="font-weight:600;">Struggling with addiction, want to get free</div><div class="meta" style="margin-top:3px;">private · follow-up requested</div></td>
+              <td>North Charleston</td>
+              <td><span class="tag">New Life Fellowship</span></td>
+              <td><span class="pill pill--praying"><span class="pdot"></span>Being prayed over</span></td>
+              <td class="meta">2d</td>
+            </tr>
+            <tr class="row-click" data-stage="praying" data-action="drawer:reqDrawer">
+              <td><div style="font-weight:600;">Healing for my father after his stroke</div><div class="meta" style="margin-top:3px;">shareable · follow-up requested</div></td>
+              <td>Mount Pleasant</td>
+              <td><span class="tag">Seacoast Church</span></td>
+              <td><span class="pill pill--praying"><span class="pdot"></span>Being prayed over</span></td>
+              <td class="meta">3d</td>
+            </tr>
+            <tr class="row-click" data-stage="answered" data-action="drawer:reqDrawer">
+              <td><div style="font-weight:600;">Job after six months out of work — praise, I start Monday</div><div class="meta" style="margin-top:3px;">shareable · eligible for praise report</div></td>
+              <td>Summerville</td>
+              <td><span class="tag">Grace Christian Fellowship</span></td>
+              <td><span class="pill pill--answered"><span class="pdot"></span>Answered</span></td>
+              <td class="meta">4d</td>
+            </tr>
+            <tr class="row-click" data-stage="answered" data-action="drawer:reqDrawer">
+              <td><div style="font-weight:600;">Reconciled with my daughter after two years</div><div class="meta" style="margin-top:3px;">shareable · eligible for praise report</div></td>
+              <td>North Charleston</td>
+              <td><span class="tag">Royal Missionary Baptist</span></td>
+              <td><span class="pill pill--answered"><span class="pdot"></span>Answered</span></td>
+              <td class="meta">6d</td>
+            </tr>
+            <tr class="row-click" data-stage="answered" data-action="drawer:reqDrawer">
+              <td><div style="font-weight:600;">Safe delivery of our baby girl — thank you</div><div class="meta" style="margin-top:3px;">shareable</div></td>
+              <td>West Ashley</td>
+              <td><span class="tag">St. Andrew's Parish</span></td>
+              <td><span class="pill pill--answered"><span class="pdot"></span>Answered</span></td>
+              <td class="meta">8d</td>
+            </tr>
+            <tr class="row-click" data-stage="answered" data-action="drawer:reqDrawer">
+              <td><div style="font-weight:600;">Housing came through for a veteran we'd prayed for</div><div class="meta" style="margin-top:3px;">shareable · became a community response</div></td>
+              <td>Downtown</td>
+              <td><span class="tag">Citadel Square Baptist</span></td>
+              <td><span class="pill pill--answered"><span class="pdot"></span>Answered</span></td>
+              <td class="meta">11d</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note" style="margin-top:18px;">
+        <b>Turning prayer into practical help.</b> A request like the eviction above can be turned into a coordinated community response on the platform — combining prayer with food, housing and transport help — but only when a person decides to, and only carrying forward what the requester agreed to share (PR-23…PR-26). That link is the point where the prayer ministry and the rest of the platform actually meet.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DETAIL DRAWER ============ -->
+<div class="scrim" data-scrim></div>
+<aside class="drawer" id="reqDrawer" aria-label="Request detail">
+  <div class="drawer__head">
+    <div>
+      <div class="inline" style="gap:8px;"><span class="pill pill--urgent"><span class="pdot"></span>Urgent</span><span class="pill pill--new"><span class="pdot"></span>New</span></div>
+      <h2 class="serif" style="font-size:22px;margin-top:10px;max-width:36ch;">A family facing eviction, three children, needs prayer and help fast</h2>
+      <div class="meta" style="margin-top:6px;">Submitted 2 hours ago via the public form · West Ashley</div>
+    </div>
+    <button class="iconbtn" data-action="close" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <div class="eyebrow">The request</div>
+    <p style="margin:8px 0 0;color:var(--ink-soft);line-height:1.65;">"We got a notice on our door yesterday. My husband lost hours at work and we're behind two months. I have three kids and I'm scared. Please pray, and if there's any way someone can help us figure out what to do, please."</p>
+
+    <div class="divider"></div>
+
+    <div class="eyebrow">Contact — visible only to follow-up handlers</div>
+    <div class="card card--pad" style="margin-top:8px;background:var(--vellum);">
+      <div class="between"><span class="who__meta">Name</span><b>Marisa T.</b></div>
+      <div class="between" style="margin-top:8px;"><span class="who__meta">Phone</span><b>(843) 555-0148</b></div>
+      <div class="note" style="margin-top:12px;"><b>Never shown to pray-ers.</b> If this request is shared for prayer, it goes out without these details (X-9, PR-20).</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="eyebrow">Route to a church</div>
+    <div class="note note--sim" style="margin-top:8px;">The system suggests the nearest participating church to West Ashley. The suggestion is advice — a person confirms or overrides it (PR-10, PR-11).</div>
+    <div class="card card--pad" style="margin-top:10px;">
+      <div class="between">
+        <div class="who"><div class="avatar">SP</div><div><div class="who__name">St. Andrew's Parish</div><div class="who__meta">1.2 mi from West Ashley · Rev. Coleman · 34 pray-ers</div></div></div>
+        <span class="pill pill--praying">Suggested</span>
+      </div>
+    </div>
+    <div class="inline" style="margin-top:10px;">
+      <button class="btn btn--primary btn--sm" data-action="toast-close:Routed to St. Andrew's Parish">Assign to St. Andrew's</button>
+      <button class="btn btn--ghost btn--sm" data-action="toast:Pick a different church">Choose another church</button>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="eyebrow">Move stage</div>
+    <div class="inline" style="margin-top:10px;">
+      <button class="btn btn--ghost btn--sm" data-action="toast:Marked · Being prayed over">→ Being prayed over</button>
+      <button class="btn btn--ghost btn--sm" data-action="toast:Marked · Answered">→ Answered</button>
+      <button class="btn btn--quiet btn--sm" data-action="toast:Archived">Archive</button>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="eyebrow">Internal notes</div>
+    <textarea class="textarea" style="margin-top:8px;min-height:80px;" placeholder="Visible only to those who can work this request…"></textarea>
+
+    <div class="note" style="margin-top:14px;"><b>Practical help.</b> This request reveals a tangible need. "Turn into a community response" would open the platform's encounter flow, carrying the requester's sharing choice with it.</div>
+  </div>
+  <div class="drawer__foot">
+    <button class="btn btn--ghost" data-action="toast-close:Turned into a community response">Turn into community response</button>
+    <button class="btn btn--primary" data-action="close">Done</button>
+  </div>
+</aside>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

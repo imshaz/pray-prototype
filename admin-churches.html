@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Churches & Leaders — Pray Charleston</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body class="notes-on">
+<div class="simbar">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+  <span><b>Interactive prototype.</b> Simulated data for review. Use the persona switcher (top-right) to change role, and "Show notes" for explanations.</span>
+</div>
+
+<div class="app">
+  <!-- ============ SIDEBAR (canonical — reused on all admin pages) ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__mark">✦</div>
+      <div>
+        <div class="brand__name">Pray Charleston</div>
+        <div class="brand__sub">Ministry Admin</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav__group">
+        <div class="nav__label">Overview</div>
+        <a class="nav__item" href="admin-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg> Dashboard</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Requests</div>
+        <a class="nav__item" href="admin-requests.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg> Prayer requests <span class="nav__badge">6</span></a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Publish</div>
+        <a class="nav__item" href="admin-guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Prayer guide</a>
+        <a class="nav__item" href="admin-focus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Focus calendar</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">People</div>
+        <a class="nav__item is-active" href="admin-churches.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg> Churches &amp; leaders</a>
+        <a class="nav__item" href="admin-messaging.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg> Reaching people</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Insight</div>
+        <a class="nav__item" href="admin-confirmations.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Confirmation log</a>
+        <a class="nav__item" href="admin-praise.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> Praise report</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Settings</div>
+        <a class="nav__item" href="admin-access.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Delegated access</a>
+        <a class="nav__item" href="admin-charleston.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg> Charleston launch</a>
+      </div>
+    </nav>
+    <div class="nav__foot">Thriving Communities · tenant: charleston</div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+    <div class="topbar">
+      <button class="menu-btn" data-menu-btn aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+      <div class="topbar__crumb"><b>Churches &amp; leaders</b></div>
+      <div class="topbar__spacer"></div>
+      <label class="notes-toggle" data-notes-toggle role="button" aria-pressed="true"><span class="dot"></span> Show notes</label>
+      <div class="persona">
+        <span class="persona__label">Viewing as</span>
+        <select data-persona aria-label="Switch persona">
+          <option value="public">Public</option>
+          <option value="admin" selected>Ministry Admin</option>
+          <option value="leader">Church Leader</option>
+          <option value="recorder">Recorder</option>
+          <option value="prayer">Pray-er</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-head">
+        <div class="page-head-row">
+          <div>
+            <h1 class="page-title">Churches &amp; leaders</h1>
+            <p class="page-sub">Every participating church in Charleston, its leader, its pray-ers — and which ones have gone quiet.</p>
+          </div>
+          <div class="inline">
+            <button class="btn btn--ghost" data-action="toast:Add a church — search the community first"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg> Add a church</button>
+            <button class="btn btn--ministry" data-action="toast:Import church list started"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg> Import church list</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>A participating church is an organisation in the community — not a separate record.</b> You either mark an existing organisation as <i>participating</i> in prayer (ON-1), or add one that isn't in the community yet, which sends an invitation for its leader to claim the account (ON-2). Either way the platform checks for duplicates by name and address, so an organisation already on the platform is never created twice (ON-3, ON-4).
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid--4" style="margin-top:18px;">
+        <div class="stat">
+          <div class="stat__label">Participating churches</div>
+          <div class="stat__value">47</div>
+          <div class="stat__delta up">▲ 3 joined this month</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Invited, not joined</div>
+          <div class="stat__value">11</div>
+          <div class="stat__delta flat">awaiting the leader to claim</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Quiet this month</div>
+          <div class="stat__value" style="color:var(--rose)">5</div>
+          <div class="stat__delta down">joined but haven't shared</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Pray-ers across all</div>
+          <div class="stat__value">1,284</div>
+          <div class="stat__delta flat">from participating churches</div>
+        </div>
+      </div>
+
+      <div class="note note--sim">
+        <b>Silent and absent are two different problems.</b> A church that hasn't joined at all (<i>invited, not joined</i>) needs a nudge to its leader to claim the account. A church that joined but has gone quiet needs re-engaging, not re-inviting. The platform keeps them apart so you never treat one as the other (ON-10).
+      </div>
+
+      <!-- Leader engagement table -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Leader engagement</div>
+          <span class="meta">47 participating · sorted by activity</span>
+        </div>
+        <div class="note">
+          <b>This is the view that earns its keep.</b> For each church you can see at a glance whether its leader picked up the latest prayer guide, whether they passed it on to their congregation, and when they were last active — so a church slipping into silence is visible before it disappears (GD-14, GD-15, GD-18).
+        </div>
+        <div class="table-wrap" style="margin-top:14px;">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Church</th>
+                <th>Leader</th>
+                <th>Pray-ers</th>
+                <th>Got latest guide</th>
+                <th>Shared it on</th>
+                <th>Last active</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-click" data-action="toast:Opened church profile">
+                <td>
+                  <div class="who">
+                    <div class="avatar">EC</div>
+                    <div><div class="who__name">East Cooper Baptist</div><div class="who__meta">Mount Pleasant</div></div>
+                  </div>
+                </td>
+                <td>Rev. Daniel Whitfield</td>
+                <td><b>210</b></td>
+                <td><span class="pill pill--active"><span class="pdot"></span>Received</span></td>
+                <td>
+                  <div class="meter" style="width:120px;"><div class="meter__fill sage" style="width:88%;"></div></div>
+                  <div class="who__meta" style="margin-top:5px;">Shared with 184</div>
+                </td>
+                <td><span class="meta">2 hours ago</span></td>
+              </tr>
+
+              <tr class="row-click" data-action="toast:Opened church profile">
+                <td>
+                  <div class="who">
+                    <div class="avatar">SC</div>
+                    <div><div class="who__name">Seacoast Church</div><div class="who__meta">Mount Pleasant</div></div>
+                  </div>
+                </td>
+                <td>Pastor Marcus Reed</td>
+                <td><b>176</b></td>
+                <td><span class="pill pill--active"><span class="pdot"></span>Received</span></td>
+                <td>
+                  <div class="meter" style="width:120px;"><div class="meter__fill sage" style="width:74%;"></div></div>
+                  <div class="who__meta" style="margin-top:5px;">Shared with 130</div>
+                </td>
+                <td><span class="meta">Yesterday</span></td>
+              </tr>
+
+              <tr class="row-click" data-action="toast:Opened church profile">
+                <td>
+                  <div class="who">
+                    <div class="avatar">CS</div>
+                    <div><div class="who__name">Citadel Square Baptist</div><div class="who__meta">Downtown</div></div>
+                  </div>
+                </td>
+                <td>Rev. Alicia Monroe</td>
+                <td><b>142</b></td>
+                <td><span class="pill pill--active"><span class="pdot"></span>Received</span></td>
+                <td>
+                  <div class="meter" style="width:120px;"><div class="meter__fill sage" style="width:61%;"></div></div>
+                  <div class="who__meta" style="margin-top:5px;">Shared with 87</div>
+                </td>
+                <td><span class="meta">3 days ago</span></td>
+              </tr>
+
+              <tr class="row-click" data-action="toast:Opened church profile">
+                <td>
+                  <div class="who">
+                    <div class="avatar">BA</div>
+                    <div><div class="who__name">Bethel AME</div><div class="who__meta">Downtown</div></div>
+                  </div>
+                </td>
+                <td>Pastor Gloria Simmons</td>
+                <td><b>98</b></td>
+                <td><span class="pill pill--active"><span class="pdot"></span>Received</span></td>
+                <td>
+                  <div class="meter" style="width:120px;"><div class="meter__fill sage" style="width:48%;"></div></div>
+                  <div class="who__meta" style="margin-top:5px;">Shared with 47</div>
+                </td>
+                <td><span class="meta">4 days ago</span></td>
+              </tr>
+
+              <tr class="row-click" data-action="toast:Opened church profile">
+                <td>
+                  <div class="who">
+                    <div class="avatar">GC</div>
+                    <div><div class="who__name">Grace Christian Fellowship</div><div class="who__meta">Summerville</div></div>
+                  </div>
+                </td>
+                <td>Rev. Thomas Boyd</td>
+                <td><b>64</b></td>
+                <td><span class="pill pill--active"><span class="pdot"></span>Received</span></td>
+                <td>
+                  <span class="pill pill--quiet"><span class="pdot"></span>Not shared</span>
+                  <div class="who__meta" style="margin-top:5px;">Opened, never passed on</div>
+                </td>
+                <td><span class="meta">8 days ago</span></td>
+              </tr>
+
+              <tr class="row-click" data-action="toast:Opened church profile">
+                <td>
+                  <div class="who">
+                    <div class="avatar">SB</div>
+                    <div><div class="who__name">Summerville Baptist</div><div class="who__meta">Summerville</div></div>
+                  </div>
+                </td>
+                <td>Pastor Henry Coleman</td>
+                <td><b>58</b></td>
+                <td><span class="pill pill--active"><span class="pdot"></span>Received</span></td>
+                <td>
+                  <span class="pill pill--quiet"><span class="pdot"></span>Not shared</span>
+                  <div class="who__meta" style="margin-top:5px;">—</div>
+                </td>
+                <td><span class="meta">11 days ago</span></td>
+              </tr>
+
+              <tr class="row-click" data-action="toast:Opened church profile">
+                <td>
+                  <div class="who">
+                    <div class="avatar">SA</div>
+                    <div><div class="who__name">St. Andrew's Parish</div><div class="who__meta">West Ashley</div></div>
+                  </div>
+                </td>
+                <td>Rev. Margaret Ellis</td>
+                <td><b>41</b></td>
+                <td><span class="pill pill--quiet"><span class="pdot"></span>Not opened</span></td>
+                <td>
+                  <span class="pill pill--quiet"><span class="pdot"></span>Not shared</span>
+                  <div class="who__meta" style="margin-top:5px;">—</div>
+                </td>
+                <td><span class="meta">17 days ago</span></td>
+              </tr>
+
+              <tr class="row-click" data-action="toast:Opened church profile">
+                <td>
+                  <div class="who">
+                    <div class="avatar">NL</div>
+                    <div><div class="who__name">New Life Fellowship</div><div class="who__meta">North Charleston</div></div>
+                  </div>
+                </td>
+                <td>Pastor Ronald Pierce</td>
+                <td><b>29</b></td>
+                <td><span class="pill pill--quiet"><span class="pdot"></span>Not opened</span></td>
+                <td>
+                  <span class="pill pill--quiet"><span class="pdot"></span>Not shared</span>
+                  <div class="who__meta" style="margin-top:5px;">—</div>
+                </td>
+                <td><span class="meta">23 days ago</span></td>
+              </tr>
+
+              <tr class="row-click" data-action="toast:Opened church profile">
+                <td>
+                  <div class="who">
+                    <div class="avatar">RM</div>
+                    <div><div class="who__name">Royal Missionary Baptist</div><div class="who__meta">North Charleston</div></div>
+                  </div>
+                </td>
+                <td>Rev. Cynthia Grant</td>
+                <td><b>12</b></td>
+                <td><span class="pill pill--quiet"><span class="pdot"></span>Not shared</span></td>
+                <td>
+                  <span class="pill pill--quiet"><span class="pdot"></span>Not shared</span>
+                  <div class="who__meta" style="margin-top:5px;">—</div>
+                </td>
+                <td><span class="meta">28 days ago</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <b>Act on a filtered set, right here.</b> Rather than chase leaders one by one, the ministry can message any group defined by what this view shows — for example everyone who hasn't shared this period's guide — in a single action (GD-16). The message is drafted once and sent to just those leaders.
+        </div>
+        <div class="inline" style="margin-top:14px;">
+          <button class="btn btn--ministry" data-action="nav:admin-messaging.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> Message the 5 quiet leaders</button>
+          <span class="meta">St. Andrew's · New Life · Royal Missionary · Grace Christian · Summerville Baptist</span>
+        </div>
+      </div>
+
+      <!-- Invited but not joined -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Churches invited but not yet joined</div>
+          <span class="meta">11 total · 3 shown</span>
+        </div>
+        <div class="note note--sim">
+          These aren't quiet — they're <b>absent</b>. Each has an invitation out to its leader to claim the account, but no one has joined yet. Resending nudges the leader; it never creates a second organisation (ON-10, ON-4).
+        </div>
+        <div class="table-wrap" style="margin-top:14px;">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>
+                  <div class="who">
+                    <div class="avatar avatar--sm">MZ</div>
+                    <div><div class="who__name">Mount Zion AME</div><div class="who__meta">North Charleston</div></div>
+                  </div>
+                </td>
+                <td><span class="who__meta">Invited 9 days ago</span></td>
+                <td><span class="pill pill--outline">Invitation sent</span></td>
+                <td style="text-align:right;"><button class="btn btn--sm btn--ghost" data-action="toast:Invitation resent">Resend invite</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="who">
+                    <div class="avatar avatar--sm">HR</div>
+                    <div><div class="who__name">Holy Redeemer Church</div><div class="who__meta">West Ashley</div></div>
+                  </div>
+                </td>
+                <td><span class="who__meta">Invited 14 days ago</span></td>
+                <td><span class="pill pill--outline">Invitation sent</span></td>
+                <td style="text-align:right;"><button class="btn btn--sm btn--ghost" data-action="toast:Invitation resent">Resend invite</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="who">
+                    <div class="avatar avatar--sm">CC</div>
+                    <div><div class="who__name">Coastal Community Church</div><div class="who__meta">Summerville</div></div>
+                  </div>
+                </td>
+                <td><span class="who__meta">Invited 21 days ago</span></td>
+                <td><span class="pill pill--outline">Invitation sent</span></td>
+                <td style="text-align:right;"><button class="btn btn--sm btn--ghost" data-action="toast:Invitation resent">Resend invite</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

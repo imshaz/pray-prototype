@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Reaching people — Pray Charleston</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body class="notes-on">
+<div class="simbar">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+  <span><b>Interactive prototype.</b> Sends are simulated and recorded to a log. No real notification or email leaves this screen.</span>
+</div>
+
+<div class="app">
+  <!-- ============ SIDEBAR (canonical — reused on all admin pages) ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__mark">✦</div>
+      <div>
+        <div class="brand__name">Pray Charleston</div>
+        <div class="brand__sub">Ministry Admin</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav__group">
+        <div class="nav__label">Overview</div>
+        <a class="nav__item" href="admin-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg> Dashboard</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Requests</div>
+        <a class="nav__item" href="admin-requests.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg> Prayer requests <span class="nav__badge">6</span></a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Publish</div>
+        <a class="nav__item" href="admin-guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Prayer guide</a>
+        <a class="nav__item" href="admin-focus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Focus calendar</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">People</div>
+        <a class="nav__item" href="admin-churches.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg> Churches &amp; leaders</a>
+        <a class="nav__item is-active" href="admin-messaging.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg> Reaching people</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Insight</div>
+        <a class="nav__item" href="admin-confirmations.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Confirmation log</a>
+        <a class="nav__item" href="admin-praise.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> Praise report</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Settings</div>
+        <a class="nav__item" href="admin-access.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Delegated access</a>
+        <a class="nav__item" href="admin-charleston.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg> Charleston launch</a>
+      </div>
+    </nav>
+    <div class="nav__foot">Thriving Communities · tenant: charleston</div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+    <div class="topbar">
+      <button class="menu-btn" data-menu-btn aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+      <div class="topbar__crumb"><b>Reaching people</b></div>
+      <div class="topbar__spacer"></div>
+      <label class="notes-toggle" data-notes-toggle role="button" aria-pressed="true"><span class="dot"></span> Show notes</label>
+      <div class="persona">
+        <span class="persona__label">Viewing as</span>
+        <select data-persona aria-label="Switch persona">
+          <option value="public">Public</option>
+          <option value="admin" selected>Ministry Admin</option>
+          <option value="leader">Church Leader</option>
+          <option value="recorder">Recorder</option>
+          <option value="prayer">Pray-er</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-head">
+        <div class="page-head-row">
+          <div>
+            <div class="eyebrow eyebrow--amethyst">People · One message, one group</div>
+            <h1 class="page-title">Reaching people</h1>
+            <p class="page-sub">Send one message to a chosen group — all leaders, the pray-ers of one church, everyone who's gone quiet. Reviewed before it goes, recorded after.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>This is new.</b> Until now the platform could only notify one person at a time. Guide distribution, thank-yous, focus reminders and Charleston's launch contact all depend on this one capability.
+      </div>
+
+      <!-- ============ COMPOSE + AUDIENCE ============ -->
+      <div class="grid grid--2" style="margin-top:18px; align-items:start;">
+
+        <!-- LEFT — Compose -->
+        <div class="card">
+          <div class="card__head">
+            <div class="card__title">Compose</div>
+            <span class="pill pill--outline">Draft</span>
+          </div>
+          <div class="card__body">
+            <div class="field">
+              <label class="field__label">From</label>
+              <input class="input" value="Pray Charleston ministry" readonly style="background:var(--vellum);color:var(--ink-soft);">
+              <div class="field__hint">Messages always go out under the ministry's name, never a personal account.</div>
+            </div>
+            <div class="field">
+              <label class="field__label">Subject</label>
+              <input class="input" value="A word of thanks — and this month's focus">
+            </div>
+            <div class="field">
+              <label class="field__label">Message</label>
+              <textarea class="textarea" style="min-height:170px;">Dear friends,
+
+Thank you for the faithfulness you've shown this season — your prayers are quietly holding this city together.
+
+This month we're gathering around God's faithfulness, lifting up North Charleston's schools and the young people growing up among us. Would you keep that before the Lord this week?
+
+With love,
+The Pray Charleston team</textarea>
+            </div>
+            <div class="field" style="margin-bottom:8px;">
+              <label class="field__label">How it's delivered</label>
+              <div class="grid grid--2">
+                <label class="check"><input type="checkbox" checked><span><span class="check__title">In-app notification</span><span class="check__desc">Appears in each recipient's notifications.</span></span></label>
+                <label class="check"><input type="checkbox" checked><span><span class="check__title">Email</span><span class="check__desc">Sent only to those who haven't opted out.</span></span></label>
+              </div>
+              <div class="field__hint">Email respects each person's opt-out — no one who's asked to stop hearing from us is included.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT — Audience -->
+        <div class="card">
+          <div class="card__head">
+            <div class="card__title">Who receives this</div>
+            <span class="meta">choose one group</span>
+          </div>
+          <div class="card__body">
+            <div class="stack">
+              <label class="check is-on"><input type="checkbox" checked><span><span class="check__title">All church leaders <span class="meta">· 47</span></span><span class="check__desc">Every leader across participating churches.</span></span></label>
+
+              <label class="check"><input type="checkbox"><span><span class="check__title">All active pray-ers <span class="meta">· 1,284</span></span><span class="check__desc">Everyone signed up and still engaged.</span></span></label>
+
+              <label class="check"><input type="checkbox"><span style="flex:1;"><span class="check__title">Pray-ers of one church…</span><span class="check__desc">Just one congregation's members.</span>
+                <select class="select" style="margin-top:10px;max-width:280px;">
+                  <option>Seacoast Church</option>
+                  <option>St. Matthew Baptist</option>
+                  <option>Mount Moriah AME</option>
+                  <option>Charleston Grace Fellowship</option>
+                  <option>Summerville Community Church</option>
+                </select></span></label>
+
+              <label class="check"><input type="checkbox"><span><span class="check__title">Everyone inactive 60+ days <span class="meta">· 25</span></span><span class="check__desc">A gentle re-invitation to those who've gone quiet.</span></span></label>
+
+              <label class="check"><input type="checkbox"><span style="flex:1;"><span class="check__title">Only this region…</span><span class="check__desc">Narrow the group by area.</span>
+                <select class="select" style="margin-top:10px;max-width:280px;">
+                  <option>Charleston</option>
+                  <option>North Charleston</option>
+                  <option>Mount Pleasant</option>
+                  <option>Summerville</option>
+                </select></span></label>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="between">
+              <span class="field__label" style="margin-bottom:0;">Recipients</span>
+              <span class="tag" style="font-size:13px;">47 leaders</span>
+            </div>
+
+            <div class="note note--sim" style="margin-top:14px;">
+              A group can never include anyone outside this community (X-3). Every audience is drawn from Charleston's own people and no one else's.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ REVIEW & SEND ============ -->
+      <div class="card" style="margin-top:22px;">
+        <div class="card__body">
+          <div class="between">
+            <div class="inline">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--amethyst)" stroke-width="2" style="width:20px;height:20px;"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              <div>
+                <div class="row__title">Sending to 47 church leaders</div>
+                <div class="row__sub">In-app notification + email · from Pray Charleston ministry</div>
+              </div>
+            </div>
+            <button class="btn btn--ministry btn--lg" data-action="modal:reviewModal">Review &amp; send</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ RECENT SENDS ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Recent sends</div>
+          <span class="meta">every send recorded — who, when, what (X-5)</span>
+        </div>
+
+        <div class="note note--sim">
+          Where a channel can't report delivery or opens, this view says so plainly (X-6) — an honest "unavailable" rather than a misleading "0 opened".
+        </div>
+
+        <div class="table-wrap" style="margin-top:14px;">
+          <table class="table">
+            <thead>
+              <tr><th>Group</th><th>Recipients</th><th>Sent</th><th>Sent by</th><th>Delivery</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>March guide announcement</b><div class="row__sub">All church leaders</div></td>
+                <td>47</td>
+                <td>6 Mar · 8:04 AM</td>
+                <td>Pastor Ellison</td>
+                <td><span class="pill pill--answered"><span class="pdot"></span>47 delivered · 39 opened</span></td>
+              </tr>
+              <tr>
+                <td><b>A gentle hello</b><div class="row__sub">Everyone inactive 60+ days</div></td>
+                <td>25</td>
+                <td>28 Feb · 5:30 PM</td>
+                <td>Deacon Rivers</td>
+                <td><span class="pill pill--outline">Delivery status unavailable</span></td>
+              </tr>
+              <tr>
+                <td><b>Thank you, Seacoast</b><div class="row__sub">Pray-ers of Seacoast Church</div></td>
+                <td>184</td>
+                <td>20 Feb · 9:12 AM</td>
+                <td>Pastor Ellison</td>
+                <td><span class="pill pill--answered"><span class="pdot"></span>184 delivered · 121 opened</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============ REVIEW & SEND MODAL ============ -->
+<div class="modal" id="reviewModal">
+  <div class="modal__card">
+    <div class="modal__head"><h3 class="serif" style="font-size:21px;">Send to 47 church leaders?</h3></div>
+    <div class="modal__body">
+      <p class="soft">Read it once more the way they'll receive it. Nothing goes out until you send.</p>
+
+      <div class="card card--pad" style="margin-top:14px;background:var(--vellum);">
+        <div class="eyebrow" style="margin-bottom:8px;">Preview</div>
+        <div class="who__meta" style="margin-bottom:2px;">From Pray Charleston ministry</div>
+        <div class="row__title" style="margin-bottom:10px;">A word of thanks — and this month's focus</div>
+        <p class="soft" style="font-size:13.5px;line-height:1.65;">Dear friends, thank you for the faithfulness you've shown this season — your prayers are quietly holding this city together. This month we're gathering around God's faithfulness, lifting up North Charleston's schools and the young people growing up among us…</p>
+      </div>
+
+      <div class="between" style="margin-top:14px;">
+        <span class="who__meta">Recipients</span><b>47 church leaders</b>
+      </div>
+      <div class="between" style="margin-top:8px;">
+        <span class="who__meta">Delivered by</span><b>In-app + email</b>
+      </div>
+
+      <div class="note" style="margin-top:12px;">
+        <b>Before it goes.</b> Every recipient can opt out of non-essential messages (X-7), so the email list may be smaller than the group. This send is recorded — who sent it, when, and what was said (X-5).
+      </div>
+      <div class="note note--sim" style="margin-top:8px;"><b>Simulated.</b> No real message is sent.</div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--ghost" data-action="close">Cancel</button>
+      <button class="btn btn--ministry" data-action="toast-close:Sent to 47 church leaders · recorded in the send log">Send now</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Confirmation log — Pray Charleston</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body class="notes-on">
+<div class="simbar">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+  <span><b>Interactive prototype.</b> Click a confirmation row to open it. Sharing an entry is a simulated action.</span>
+</div>
+
+<div class="app">
+  <!-- ============ SIDEBAR (canonical — reused on all admin pages) ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__mark">✦</div>
+      <div>
+        <div class="brand__name">Pray Charleston</div>
+        <div class="brand__sub">Ministry Admin</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav__group">
+        <div class="nav__label">Overview</div>
+        <a class="nav__item" href="admin-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg> Dashboard</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Requests</div>
+        <a class="nav__item" href="admin-requests.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg> Prayer requests <span class="nav__badge">6</span></a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Publish</div>
+        <a class="nav__item" href="admin-guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Prayer guide</a>
+        <a class="nav__item" href="admin-focus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Focus calendar</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">People</div>
+        <a class="nav__item" href="admin-churches.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg> Churches &amp; leaders</a>
+        <a class="nav__item" href="admin-messaging.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg> Reaching people</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Insight</div>
+        <a class="nav__item is-active" href="admin-confirmations.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Confirmation log</a>
+        <a class="nav__item" href="admin-praise.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> Praise report</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Settings</div>
+        <a class="nav__item" href="admin-access.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Delegated access</a>
+        <a class="nav__item" href="admin-charleston.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg> Charleston launch</a>
+      </div>
+    </nav>
+    <div class="nav__foot">Thriving Communities · tenant: charleston</div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+    <div class="topbar">
+      <button class="menu-btn" data-menu-btn aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+      <div class="topbar__crumb"><b>Confirmation log</b></div>
+      <div class="topbar__spacer"></div>
+      <label class="notes-toggle" data-notes-toggle role="button" aria-pressed="true"><span class="dot"></span> Show notes</label>
+      <div class="persona">
+        <span class="persona__label">Viewing as</span>
+        <select data-persona aria-label="Switch persona">
+          <option value="public">Public</option>
+          <option value="admin" selected>Ministry Admin</option>
+          <option value="leader">Church Leader</option>
+          <option value="recorder">Recorder</option>
+          <option value="prayer">Pray-er</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-head">
+        <div class="page-head-row">
+          <div>
+            <div class="eyebrow eyebrow--amethyst">Recorder &amp; confirmation log</div>
+            <h1 class="page-title">Confirmation log</h1>
+            <p class="page-sub">What churches sensed in prayer, gathered in one place. Internal by default — nothing is shared beyond a church unless someone chooses to.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>What a confirmation is.</b> During a prayer time, a recorder at each church jots down what was sensed — a scripture, a strategy, an encouragement — on their phone, right after the gathering. It replaces the shared document a church used to pass around (CL-11). The ministry doesn't sit in every huddle, but it can see across all churches from here (CL-12).
+      </div>
+
+      <!-- ============ CONVERGENCE HIGHLIGHT (CL-15) ============ -->
+      <div class="card" style="margin-top:20px;border-color:var(--amethyst);box-shadow:0 0 0 3px var(--amethyst-wash);">
+        <div class="card__head">
+          <div class="inline" style="gap:10px;">
+            <span class="pill pill--praying"><span class="pdot"></span>Convergence</span>
+            <div class="card__title">Themes recurring across churches</div>
+          </div>
+          <span class="meta">this month</span>
+        </div>
+        <div class="card__body">
+          <p style="color:var(--ink-soft);margin:0 0 16px;max-width:64ch;line-height:1.6;">When several churches independently write down the same thing without talking to each other, it's worth noticing. These are the patterns the log surfaced on its own.</p>
+          <div class="grid grid--2">
+            <div class="card card--pad">
+              <div class="eyebrow eyebrow--amethyst">Recorded by 3 churches</div>
+              <div class="serif" style="font-size:21px;font-weight:600;margin:8px 0 10px;">Unity across congregations</div>
+              <div class="inline" style="gap:6px;margin-bottom:14px;">
+                <span class="tag">New Life Fellowship</span>
+                <span class="tag">Seacoast Church</span>
+                <span class="tag">Bethel AME</span>
+              </div>
+              <button class="btn btn--ghost btn--sm" data-action="drawer:confDrawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> View entries</button>
+            </div>
+            <div class="card card--pad">
+              <div class="eyebrow eyebrow--amethyst">Recorded by 4 churches</div>
+              <div class="serif" style="font-size:21px;font-weight:600;margin:8px 0 10px;">A burden for the schools</div>
+              <div class="inline" style="gap:6px;margin-bottom:14px;">
+                <span class="tag">St. Andrew's Parish</span>
+                <span class="tag">Grace Christian</span>
+                <span class="tag">+2 more</span>
+              </div>
+              <button class="btn btn--ghost btn--sm" data-action="drawer:confDrawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> View entries</button>
+            </div>
+          </div>
+          <div class="note note--sim" style="margin-top:16px;">
+            A flat shared document could never surface this — each church's page would sit on its own, and no one would see that four of them wrote down the same burden in the same month (CL-15).
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ FILTERS ============ -->
+      <div class="between" style="margin:26px 0 14px;flex-wrap:wrap;gap:12px;">
+        <div class="tabs" data-tab-group style="border:none;margin:0;">
+          <div class="tab is-on">All entries <span class="meta" style="margin-left:4px;">32</span></div>
+          <div class="tab">Internal <span class="meta" style="margin-left:4px;">27</span></div>
+          <div class="tab">Shareable <span class="meta" style="margin-left:4px;">5</span></div>
+        </div>
+        <div class="inline">
+          <div class="seg">
+            <button class="is-on">All churches</button>
+            <button>By region</button>
+          </div>
+          <div class="input" style="width:210px;display:flex;align-items:center;gap:8px;color:var(--ink-faint);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg> Search confirmations</div>
+        </div>
+      </div>
+
+      <!-- ============ TABLE ============ -->
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Entry</th><th>Church</th><th>Relates to</th><th>Logged</th><th>Sharing</th></tr></thead>
+          <tbody>
+            <tr class="row-click" data-action="drawer:confDrawer">
+              <td>
+                <div style="font-weight:600;max-width:44ch;">A strong sense of Isaiah 61 over the young people — "beauty for ashes"</div>
+                <div class="meta" style="margin-top:3px;">scripture · recorded by Denise M.</div>
+              </td>
+              <td>New Life Fellowship</td>
+              <td><span class="tag">North Charleston / schools</span></td>
+              <td class="meta">2d</td>
+              <td><span class="pill pill--shared">Shareable</span></td>
+            </tr>
+            <tr class="row-click" data-action="drawer:confDrawer">
+              <td>
+                <div style="font-weight:600;max-width:44ch;">During the huddle, a repeated impression to pray for reconciliation between two families</div>
+                <div class="meta" style="margin-top:3px;">encouragement · recorded by Paul R.</div>
+              </td>
+              <td>East Cooper Baptist</td>
+              <td><span class="tag">Mount Pleasant</span></td>
+              <td class="meta">3d</td>
+              <td><span class="pill pill--private">Internal</span></td>
+            </tr>
+            <tr class="row-click" data-action="drawer:confDrawer">
+              <td>
+                <div style="font-weight:600;max-width:44ch;">Scripture kept coming up: Psalm 46, "a very present help"</div>
+                <div class="meta" style="margin-top:3px;">scripture · recorded by Fr. Coleman</div>
+              </td>
+              <td>St. Andrew's Parish</td>
+              <td><span class="tag">Downtown / after the shooting</span></td>
+              <td class="meta">4d</td>
+              <td><span class="pill pill--shared">Shareable</span></td>
+            </tr>
+            <tr class="row-click" data-action="drawer:confDrawer">
+              <td>
+                <div style="font-weight:600;max-width:44ch;">A strategy sensed — to gather the youth pastors across the region before the school year</div>
+                <div class="meta" style="margin-top:3px;">strategy · recorded by Tanya B.</div>
+              </td>
+              <td>Grace Christian Fellowship</td>
+              <td><span class="tag">Summerville / schools</span></td>
+              <td class="meta">5d</td>
+              <td><span class="pill pill--private">Internal</span></td>
+            </tr>
+            <tr class="row-click" data-action="drawer:confDrawer">
+              <td>
+                <div style="font-weight:600;max-width:44ch;">Sensed a real hunger for unity — a picture of the congregations praying as one</div>
+                <div class="meta" style="margin-top:3px;">encouragement · recorded by Marcus L.</div>
+              </td>
+              <td>Seacoast Church</td>
+              <td><span class="tag">Region-wide</span></td>
+              <td class="meta">1w</td>
+              <td><span class="pill pill--private">Internal</span></td>
+            </tr>
+            <tr class="row-click" data-action="drawer:confDrawer">
+              <td>
+                <div style="font-weight:600;max-width:44ch;">Word for the city leaders: "Return to Me, and I will return to you" — Zechariah</div>
+                <div class="meta" style="margin-top:3px;">scripture · recorded by Rev. Okafor</div>
+              </td>
+              <td>Citadel Square Baptist</td>
+              <td><span class="tag">City leadership</span></td>
+              <td class="meta">1w</td>
+              <td><span class="pill pill--shared">Shareable</span></td>
+            </tr>
+            <tr class="row-click" data-action="drawer:confDrawer">
+              <td>
+                <div style="font-weight:600;max-width:44ch;">A heaviness lifted after praying for the families in the neighbourhood — sense of hope returning</div>
+                <div class="meta" style="margin-top:3px;">encouragement · recorded by Gloria W.</div>
+              </td>
+              <td>Bethel AME</td>
+              <td><span class="tag">North Charleston</span></td>
+              <td class="meta">2w</td>
+              <td><span class="pill pill--private">Internal</span></td>
+            </tr>
+            <tr class="row-click" data-action="drawer:confDrawer">
+              <td>
+                <div style="font-weight:600;max-width:44ch;">Same burden for the schools rose again — third week running for our huddle</div>
+                <div class="meta" style="margin-top:3px;">strategy · recorded by Denise M.</div>
+              </td>
+              <td>New Life Fellowship</td>
+              <td><span class="tag">North Charleston / schools</span></td>
+              <td class="meta">2w</td>
+              <td><span class="pill pill--private">Internal</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note" style="margin-top:18px;">
+        <b>Internal by default.</b> Every entry above stays inside the church that recorded it unless someone deliberately makes it shareable — writing something down is never the same as publishing it (CL-9, CL-10, X-10). Open any row to see the full confirmation and, where it's shareable, the option to send it on as an encouragement.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DETAIL DRAWER ============ -->
+<div class="scrim" data-scrim></div>
+<aside class="drawer" id="confDrawer" aria-label="Confirmation detail">
+  <div class="drawer__head">
+    <div>
+      <div class="inline" style="gap:8px;"><span class="pill pill--shared">Shareable</span><span class="tag">North Charleston / schools</span></div>
+      <h2 class="serif" style="font-size:22px;margin-top:10px;max-width:36ch;">A strong sense of Isaiah 61 over the young people</h2>
+      <div class="meta" style="margin-top:6px;">New Life Fellowship · recorded by Denise M. · logged 2 days ago</div>
+    </div>
+    <button class="iconbtn" data-action="close" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <div class="eyebrow">What was sensed</div>
+    <p style="margin:8px 0 0;color:var(--ink-soft);line-height:1.65;">"As we prayed over the schools, the same passage kept surfacing for three of us at once — Isaiah 61, 'beauty for ashes, the oil of joy for mourning.' A strong sense that the Lord is near to the young people here, especially the ones the system has written off. We felt we should keep praying this over North Charleston's schools through the new term."</p>
+
+    <div class="divider"></div>
+
+    <div class="grid grid--2">
+      <div>
+        <div class="eyebrow">Scripture reference</div>
+        <div class="serif" style="font-size:17px;font-weight:600;margin-top:6px;">Isaiah 61:3</div>
+      </div>
+      <div>
+        <div class="eyebrow">Relates to</div>
+        <div class="inline" style="gap:6px;margin-top:6px;"><span class="tag">North Charleston</span><span class="tag">Schools</span></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="eyebrow">Sharing setting</div>
+    <div class="card card--pad" style="margin-top:8px;background:var(--vellum);">
+      <div class="between">
+        <div class="who">
+          <div class="avatar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg></div>
+          <div><div class="who__name">Marked shareable</div><div class="who__meta">The recorder chose to make this one shareable</div></div>
+        </div>
+        <span class="pill pill--shared">Shareable</span>
+      </div>
+      <div class="note" style="margin-top:12px;"><b>Confirmations start internal.</b> This entry only leaves the church because someone set it to shareable on purpose (CL-9).</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- §13.4 Share as an encouragement -->
+    <div class="eyebrow eyebrow--amethyst">Share as an encouragement</div>
+    <p style="margin:8px 0 0;color:var(--ink-soft);line-height:1.65;">A shareable confirmation can be sent to the leader it concerns — here, the principal the church has been praying for. This is always an explicit act, chosen by a person; nothing is ever sent automatically (CL-18).</p>
+
+    <div class="card card--pad" style="margin-top:12px;">
+      <div class="between">
+        <div class="who"><div class="avatar">PH</div><div><div class="who__name">Principal Hayes</div><div class="who__meta">Burns Elementary · North Charleston</div></div></div>
+        <span class="pill pill--outline">No account</span>
+      </div>
+      <div class="note note--sim" style="margin-top:12px;">The recipient may have no account on the platform at all. Sharing works by email or a printable page, so an encouragement can reach someone the ministry simply wants to bless (CL-19).</div>
+      <div class="divider"></div>
+      <div class="eyebrow">Review the wording before it goes</div>
+      <textarea class="textarea" style="margin-top:8px;min-height:96px;">Dear Principal Hayes — as we've been praying for Burns Elementary, one passage kept coming up for us: Isaiah 61, "beauty for ashes." We wanted you to know your school is being prayed for, and that we sense real hope for your young people this term. — The prayer team, New Life Fellowship</textarea>
+      <div class="field__hint">The sender can edit this freely before sending — the encouragement should sound like the church, not the software (CL-20).</div>
+    </div>
+
+    <div class="inline" style="margin-top:14px;">
+      <button class="btn btn--ghost btn--sm" data-action="toast:Sharing setting updated">Change to shareable</button>
+      <button class="btn btn--ministry btn--sm" data-action="toast-close:Encouragement sent to Principal Hayes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> Share with the leader…</button>
+    </div>
+
+    <div class="note" style="margin-top:16px;"><b>Internal entries can't be sent yet.</b> If a confirmation is still marked internal, it must be made shareable first — a small, deliberate step that keeps the default private (CL-22).</div>
+  </div>
+  <div class="drawer__foot">
+    <button class="btn btn--primary" data-action="close">Close</button>
+  </div>
+</aside>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Charleston launch — Pray Charleston</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body class="notes-on">
+<div class="simbar">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+  <span><b>Interactive prototype.</b> Every send is simulated — nothing reaches a real inbox. This is the migration console for Charleston's already-loaded pray-ers.</span>
+</div>
+
+<div class="app">
+  <!-- ============ SIDEBAR (canonical — reused on all admin pages) ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__mark">✦</div>
+      <div>
+        <div class="brand__name">Pray Charleston</div>
+        <div class="brand__sub">Ministry Admin</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav__group">
+        <div class="nav__label">Overview</div>
+        <a class="nav__item" href="admin-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg> Dashboard</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Requests</div>
+        <a class="nav__item" href="admin-requests.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg> Prayer requests <span class="nav__badge">6</span></a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Publish</div>
+        <a class="nav__item" href="admin-guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Prayer guide</a>
+        <a class="nav__item" href="admin-focus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Focus calendar</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">People</div>
+        <a class="nav__item" href="admin-churches.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg> Churches &amp; leaders</a>
+        <a class="nav__item" href="admin-messaging.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg> Reaching people</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Insight</div>
+        <a class="nav__item" href="admin-confirmations.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Confirmation log</a>
+        <a class="nav__item" href="admin-praise.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> Praise report</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Settings</div>
+        <a class="nav__item" href="admin-access.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Delegated access</a>
+        <a class="nav__item is-active" href="admin-charleston.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg> Charleston launch</a>
+      </div>
+    </nav>
+    <div class="nav__foot">Thriving Communities · tenant: charleston</div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+    <div class="topbar">
+      <button class="menu-btn" data-menu-btn aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+      <div class="topbar__crumb"><b>Charleston launch</b></div>
+      <div class="topbar__spacer"></div>
+      <label class="notes-toggle" data-notes-toggle role="button" aria-pressed="true"><span class="dot"></span> Show notes</label>
+      <div class="persona">
+        <span class="persona__label">Viewing as</span>
+        <select data-persona aria-label="Switch persona">
+          <option value="public">Public</option>
+          <option value="admin" selected>Ministry Admin</option>
+          <option value="leader">Church Leader</option>
+          <option value="recorder">Recorder</option>
+          <option value="prayer">Pray-er</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-head">
+        <div class="page-head-row">
+          <div>
+            <div class="eyebrow eyebrow--amethyst">Migration · first contact</div>
+            <h1 class="page-title">Charleston launch</h1>
+            <p class="page-sub">Contacting the 1,309 pray-ers already in Charleston — deliberately, in batches, and reversibly.</p>
+            <div style="margin-top:12px;"><span class="pill pill--outline">Charleston only — a migration step, not how new communities start</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ THE HEADLINE SAFETY CARD (CH-11) ============ -->
+      <div class="card" style="border:2px solid var(--rose); box-shadow:0 0 0 4px var(--rose-wash), var(--shadow); margin-top:6px;">
+        <div class="card__head" style="border-bottom-color:var(--line-strong);">
+          <div class="inline" style="gap:9px;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--rose)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <div class="card__title" style="font-size:16px;">Two separate locks before anyone is contacted</div>
+          </div>
+          <span class="pill pill--urgent"><span class="pdot"></span>Most important rule</span>
+        </div>
+        <div class="card__body">
+          <p class="soft" style="margin-bottom:16px; max-width:70ch;">
+            These 1,309 people were loaded from a prayer-coordination export. They have accounts they don't know about
+            and have never been contacted. Turning email delivery on — for any reason, for anyone — must
+            <b>never</b> reach this group as a side effect. Delivery being on and this group being contacted are
+            <b>two separate decisions</b>, each with its own lock.
+          </p>
+
+          <div class="stack">
+            <!-- Lock 1 -->
+            <div class="between" style="border:1px solid var(--line-strong); border-radius:var(--r-sm); padding:14px 16px; background:var(--vellum);">
+              <div style="min-width:0;">
+                <div class="row__title">Email delivery — platform-wide</div>
+                <div class="row__sub">Outbound email is held off for the whole platform. No message of any kind leaves the system.</div>
+              </div>
+              <div class="inline" style="gap:12px; flex:none;">
+                <span class="pill pill--outline">Locked</span>
+                <span aria-hidden="true" style="display:inline-flex; width:40px; height:22px; border-radius:20px; background:var(--line-strong); padding:3px; box-shadow:inset 0 1px 2px rgba(27,23,37,.15);"><span style="width:16px; height:16px; border-radius:50%; background:#fff; box-shadow:var(--shadow-sm);"></span></span>
+                <b style="font-size:13px; color:var(--rose); letter-spacing:.04em;">OFF</b>
+              </div>
+            </div>
+            <!-- Lock 2 -->
+            <div class="between" style="border:1px solid var(--line-strong); border-radius:var(--r-sm); padding:14px 16px; background:var(--vellum);">
+              <div style="min-width:0;">
+                <div class="row__title">Contact the 1,309 loaded pray-ers</div>
+                <div class="row__sub">A deliberate, separate decision made below — batch by batch, never automatically.</div>
+              </div>
+              <div class="inline" style="gap:12px; flex:none;">
+                <span class="pill pill--outline">Locked</span>
+                <span aria-hidden="true" style="display:inline-flex; width:40px; height:22px; border-radius:20px; background:var(--line-strong); padding:3px; box-shadow:inset 0 1px 2px rgba(27,23,37,.15);"><span style="width:16px; height:16px; border-radius:50%; background:#fff; box-shadow:var(--shadow-sm);"></span></span>
+                <b style="font-size:13px; color:var(--rose); letter-spacing:.04em;">OFF</b>
+              </div>
+            </div>
+          </div>
+
+          <div class="inline" style="margin-top:16px; gap:10px; padding:12px 14px; background:var(--sage-wash); border-radius:var(--r-sm);">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--sage)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <span style="font-size:13px; color:var(--sage); font-weight:600;">Switching delivery on later will <u>not</u> message these people. Contacting them is only ever the step below.</span>
+          </div>
+
+          <div class="note note--sim" style="margin-top:4px;">
+            This is requirement <b>CH-11</b> — the hardest constraint of the whole migration. The two locks are
+            independent by design: one governs whether email works at all; the other governs whether this specific
+            already-loaded group is ever addressed.
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ STATS ============ -->
+      <div class="grid grid--4" style="margin-top:22px;">
+        <div class="stat">
+          <div class="stat__label">Loaded pray-ers</div>
+          <div class="stat__value">1,309</div>
+          <div class="stat__delta flat">from the prayer export</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Matched to a church</div>
+          <div class="stat__value">1,187</div>
+          <div class="stat__delta up">▲ by loaded church name</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Need church resolution</div>
+          <div class="stat__value" style="color:var(--amber)">122</div>
+          <div class="stat__delta down">awaiting a human decision</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Contacted so far</div>
+          <div class="stat__value">0</div>
+          <div class="stat__delta flat">no one has been reached yet</div>
+        </div>
+      </div>
+
+      <!-- ============ STEP 1 — CHURCHES & LEADERS (CH-1) ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Step 1 — Churches &amp; leaders</div>
+          <span class="meta">CH-1</span>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <p class="soft" style="margin-bottom:16px; max-width:70ch;">
+              The export brought pray-ers but <b>not their churches</b>. Before anyone is attached or contacted, each
+              church named in the data has to be created and its leader invited — so people land inside a real congregation,
+              not a floating list.
+            </p>
+            <div class="between" style="gap:20px; flex-wrap:wrap;">
+              <div style="flex:1; min-width:260px;">
+                <div class="between" style="margin-bottom:7px;">
+                  <span class="who__meta">Churches created</span>
+                  <b style="font-size:14px;">47 of 58</b>
+                </div>
+                <div class="meter"><div class="meter__fill sage" style="width:81%;"></div></div>
+                <div class="row__sub" style="margin-top:8px;">11 still to create · their leaders not yet invited</div>
+              </div>
+              <a class="btn btn--ministry" data-action="nav:admin-churches.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+                Go to churches
+              </a>
+            </div>
+            <div class="note">
+              <b>CH-1.</b> Churches are created and their leaders invited before pray-ers are attached. A leader invitation
+              is <b>not</b> the first contact to pray-ers — it's a separate, expected message to a church's own leadership.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ STEP 2 — MATCH PRAY-ERS TO CHURCHES (CH-2, CH-3) ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Step 2 — Match pray-ers to churches</div>
+          <span class="meta">CH-2 · CH-3</span>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <div class="between" style="gap:16px; flex-wrap:wrap;">
+              <div style="min-width:0;">
+                <div class="inline" style="gap:10px;">
+                  <span class="pill pill--answered"><span class="pdot"></span>Matched</span>
+                  <b style="font-size:15px;">1,187 attached automatically</b>
+                </div>
+                <div class="row__sub" style="margin-top:6px; max-width:60ch;">Each was placed in the church named on their loaded record (CH-2), by an exact name match.</div>
+              </div>
+            </div>
+
+            <!-- Highlighted resolution sub-panel -->
+            <div style="margin-top:18px; border:1px solid var(--amber); background:var(--amber-wash); border-radius:var(--r); padding:16px 18px;">
+              <div class="between" style="margin-bottom:12px;">
+                <div class="inline" style="gap:10px;">
+                  <span class="pill pill--urgent"><span class="pdot"></span>Needs resolution</span>
+                  <b style="font-size:14.5px;">122 pray-ers whose loaded church name matched nothing</b>
+                </div>
+                <span class="meta">CH-3</span>
+              </div>
+              <div class="table-wrap" style="background:var(--surface);">
+                <table class="table">
+                  <thead>
+                    <tr><th>Pray-er</th><th>Loaded church name</th><th>Status</th><th></th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><b>Charles Francis</b></td>
+                      <td>"Grace Fellowship"</td>
+                      <td><span class="pill pill--outline">No exact match</span></td>
+                      <td class="right"><button class="btn btn--sm btn--ghost" data-action="toast:Opened Charles Francis for resolution">Resolve</button></td>
+                    </tr>
+                    <tr>
+                      <td><b>Denise Okoro</b></td>
+                      <td>"New Life Ministries (N. Chas)"</td>
+                      <td><span class="pill pill--outline">No exact match</span></td>
+                      <td class="right"><button class="btn btn--sm btn--ghost" data-action="toast:Opened Denise Okoro for resolution">Resolve</button></td>
+                    </tr>
+                    <tr>
+                      <td><b>Marcus Boyd</b></td>
+                      <td>"St. Andrews AME" <span class="meta">(spelling?)</span></td>
+                      <td><span class="pill pill--outline">No exact match</span></td>
+                      <td class="right"><button class="btn btn--sm btn--ghost" data-action="toast:Opened Marcus Boyd for resolution">Resolve</button></td>
+                    </tr>
+                    <tr>
+                      <td><b>Rosa Delgado</b></td>
+                      <td><span class="muted">— blank —</span></td>
+                      <td><span class="pill pill--outline">No church given</span></td>
+                      <td class="right"><button class="btn btn--sm btn--ghost" data-action="toast:Opened Rosa Delgado for resolution">Resolve</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="meta" style="margin-top:11px;">Showing 4 of 122 · resolve each to an existing church, create a new one, or hold aside</div>
+            </div>
+
+            <div class="note note--sim">
+              <b>CH-3.</b> A pray-er whose church name matches nothing is <b>never silently dropped and never silently
+              assigned</b>. They surface here and stay here until a person decides where they belong.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ STEP 3 — FIRST CONTACT (CH-4..CH-10, CH-13) ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Step 3 — First contact</div>
+          <span class="meta">CH-4 · CH-5 · CH-6 · CH-7 · CH-8 · CH-9 · CH-10 · CH-13</span>
+        </div>
+
+        <div class="note">
+          <b>This is the only way these 1,309 people are ever addressed.</b> No routine or automated message — a new guide,
+          an event reminder, a praise report — reaches them before this deliberate first contact happens (CH-5). Once it
+          does, the platform records exactly who was reached so no one is contacted twice (CH-9).
+        </div>
+
+        <div class="grid" style="grid-template-columns: 1fr 1fr; margin-top:16px; align-items:start;">
+          <!-- Composer -->
+          <div class="card">
+            <div class="card__head">
+              <div class="card__title">Compose the first-contact message</div>
+              <span class="pill pill--outline">Draft</span>
+            </div>
+            <div class="card__body">
+              <div class="field">
+                <label class="field__label">Subject</label>
+                <input class="input" value="Why you have a Pray Charleston account — and how to opt out">
+              </div>
+              <div class="field" style="margin-bottom:8px;">
+                <label class="field__label">Message</label>
+                <textarea class="textarea" style="min-height:230px;">Dear friend,
+
+You're receiving this because your name was part of a prayer list that has now become Pray Charleston — a community where local churches pray together across the Lowcountry. An account was created for you as part of that move, which is why you're hearing from us now.
+
+You did nothing to sign up, and you're under no obligation. We simply didn't want you to have an account you never asked for without explaining it.
+
+If you'd like to stay, you'll see this month's prayer guide and the requests your church is lifting up. If you'd rather not, you can remove yourself in one step — no reply, no phone call:
+
+  → Opt out here: one click, and your account is closed.
+
+With gratitude,
+The Pray Charleston team</textarea>
+                <div class="inline" style="margin-top:10px;">
+                  <button class="btn btn--ghost btn--sm" data-action="toast:Draft saved">Save draft</button>
+                  <button class="btn btn--ghost btn--sm" data-action="toast:Sent a preview to yourself">Preview to myself</button>
+                </div>
+              </div>
+              <div class="inline" style="gap:8px;">
+                <span class="tag">Explains why they have an account (CH-6)</span>
+                <span class="tag">One-step opt-out (CH-7)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Send in batches -->
+          <div class="card">
+            <div class="card__head">
+              <div class="card__title">Send in batches</div>
+              <span class="meta">CH-8</span>
+            </div>
+            <div class="card__body">
+              <div class="between" style="gap:14px; flex-wrap:wrap; margin-bottom:16px;">
+                <div class="field" style="margin:0; min-width:150px;">
+                  <label class="field__label">Batch size</label>
+                  <select class="select">
+                    <option>25 (test)</option>
+                    <option selected>100</option>
+                    <option>250</option>
+                  </select>
+                </div>
+                <div>
+                  <div class="stat__label">Total batches</div>
+                  <div class="serif" style="font-size:24px; font-weight:700; margin-top:6px;">14</div>
+                  <div class="row__sub">1,309 people at 100 each</div>
+                </div>
+              </div>
+
+              <div class="table-wrap">
+                <table class="table">
+                  <thead>
+                    <tr><th>Batch</th><th>Recipients</th><th>Status</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><b>Batch 1</b> <span class="meta">test</span></td>
+                      <td>25 named recipients</td>
+                      <td><span class="pill pill--answered"><span class="pdot"></span>Sent</span></td>
+                    </tr>
+                    <tr>
+                      <td><b>Batch 2</b></td>
+                      <td>100 recipients</td>
+                      <td><span class="pill pill--outline">Not started</span></td>
+                    </tr>
+                    <tr>
+                      <td><b>Batch 3</b></td>
+                      <td>100 recipients</td>
+                      <td><span class="pill pill--outline">Not started</span></td>
+                    </tr>
+                    <tr>
+                      <td><b>Batch 4</b></td>
+                      <td>100 recipients</td>
+                      <td><span class="pill pill--outline">Not started</span></td>
+                    </tr>
+                    <tr>
+                      <td class="muted">Batches 5–14</td>
+                      <td class="muted">984 recipients</td>
+                      <td><span class="pill pill--outline">Queued</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="between">
+                <div class="row__sub" style="max-width:32ch;">A small named test group goes first, before any full batch (CH-10).</div>
+                <button class="btn btn--ministry" data-action="modal:sendModal">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                  Send test batch (25)
+                </button>
+              </div>
+
+              <div class="note">
+                <b>CH-5 &amp; CH-9.</b> Nothing routine or automated reaches these people before this first contact, and every
+                person reached is recorded — so no batch, and no future message, ever double-contacts them.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ CLOSING SAFETY NOTE (CH-12, CH-13) ============ -->
+      <div class="card" style="margin-top:26px; background:var(--vellum);">
+        <div class="card__body">
+          <div class="inline" style="gap:10px; margin-bottom:8px;">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--amethyst)" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 3v6h6"/></svg>
+            <b style="font-size:14.5px;">The whole batch is reversible</b>
+          </div>
+          <p class="soft" style="max-width:74ch;">
+            Every batch stays identifiable as a group and can be removed if the ministry decides against proceeding — the
+            first contact can be walked back, not just stopped (CH-13). And once the message goes out, the people who
+            never respond stay identifiable, so follow-up reaches only those who need it (CH-12).
+          </p>
+          <div class="inline" style="gap:8px; margin-top:12px;">
+            <span class="tag">Reversible &amp; removable (CH-13)</span>
+            <span class="tag">Non-responders identifiable (CH-12)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============ SEND TEST BATCH MODAL ============ -->
+<div class="modal" id="sendModal">
+  <div class="modal__card">
+    <div class="modal__head">
+      <h3 class="serif" style="font-size:21px;">Send the test batch</h3>
+      <p class="soft" style="margin-top:6px;">A small, named group first — so the message is checked in the real world before any full batch (CH-10).</p>
+    </div>
+    <div class="modal__body">
+      <div class="card card--pad" style="background:var(--vellum);">
+        <div class="between"><span class="who__meta">Recipients in this batch</span><b>25 named people</b></div>
+        <div class="between" style="margin-top:8px;"><span class="who__meta">Everyone else</span><b>Untouched · 1,284 not contacted</b></div>
+      </div>
+
+      <div class="field" style="margin-top:16px; margin-bottom:8px;">
+        <label class="field__label">Message preview</label>
+        <div class="paper-doc" style="max-width:none; padding:22px 26px;">
+          <div class="paper-doc__kicker">Pray Charleston · First contact</div>
+          <div class="paper-doc__title" style="font-size:22px;">Why you have an account</div>
+          <div class="paper-doc__rule"></div>
+          <p style="font-size:13.5px;">You're receiving this because your name was part of a prayer list that has now become Pray Charleston. An account was created for you as part of that move — you did nothing to sign up.</p>
+          <p style="font-size:13.5px;">If you'd rather not take part, you can remove yourself in one step, no reply needed.</p>
+        </div>
+      </div>
+
+      <label class="check" style="margin-top:14px;">
+        <input type="checkbox">
+        <span>
+          <span class="check__title">I've reviewed exactly who will receive this</span>
+          <span class="check__desc">The 25 named recipients are confirmed before anything is sent (CH-4).</span>
+        </span>
+      </label>
+      <label class="check" style="margin-top:10px;">
+        <input type="checkbox">
+        <span>
+          <span class="check__title">This batch is reversible and removable</span>
+          <span class="check__desc">It stays identifiable as a group and can be undone if we decide against proceeding (CH-13).</span>
+        </span>
+      </label>
+
+      <div class="note" style="margin-top:12px;">
+        <b>Simulated.</b> No real email is sent — delivery is still locked off platform-wide (CH-11). This confirms the flow only.
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--ghost" data-action="close">Cancel</button>
+      <button class="btn btn--ministry" data-action="toast-close:Test batch sent to 25 · logged, reversible">Send test batch</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

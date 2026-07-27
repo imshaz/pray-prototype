@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ministry Dashboard — Pray Charleston</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body class="notes-on">
+<div class="simbar">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+  <span><b>Interactive prototype.</b> Simulated data for review. Use the persona switcher (top-right) to change role, and "Show notes" for explanations.</span>
+</div>
+
+<div class="app">
+  <!-- ============ SIDEBAR (canonical — reused on all admin pages) ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__mark">✦</div>
+      <div>
+        <div class="brand__name">Pray Charleston</div>
+        <div class="brand__sub">Ministry Admin</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav__group">
+        <div class="nav__label">Overview</div>
+        <a class="nav__item is-active" href="admin-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg> Dashboard</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Requests</div>
+        <a class="nav__item" href="admin-requests.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg> Prayer requests <span class="nav__badge">6</span></a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Publish</div>
+        <a class="nav__item" href="admin-guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Prayer guide</a>
+        <a class="nav__item" href="admin-focus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Focus calendar</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">People</div>
+        <a class="nav__item" href="admin-churches.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg> Churches &amp; leaders</a>
+        <a class="nav__item" href="admin-messaging.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg> Reaching people</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Insight</div>
+        <a class="nav__item" href="admin-confirmations.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Confirmation log</a>
+        <a class="nav__item" href="admin-praise.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> Praise report</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Settings</div>
+        <a class="nav__item" href="admin-access.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Delegated access</a>
+        <a class="nav__item" href="admin-charleston.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg> Charleston launch</a>
+      </div>
+    </nav>
+    <div class="nav__foot">Thriving Communities · tenant: charleston</div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+    <div class="topbar">
+      <button class="menu-btn" data-menu-btn aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+      <div class="topbar__crumb"><b>Dashboard</b></div>
+      <div class="topbar__spacer"></div>
+      <label class="notes-toggle" data-notes-toggle role="button" aria-pressed="true"><span class="dot"></span> Show notes</label>
+      <div class="persona">
+        <span class="persona__label">Viewing as</span>
+        <select data-persona aria-label="Switch persona">
+          <option value="public">Public</option>
+          <option value="admin" selected>Ministry Admin</option>
+          <option value="leader">Church Leader</option>
+          <option value="recorder">Recorder</option>
+          <option value="prayer">Pray-er</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-head">
+        <div class="page-head-row">
+          <div>
+            <div class="eyebrow eyebrow--amethyst">March · Week 2 of the cycle</div>
+            <h1 class="page-title">Good morning, Pastor Ellison</h1>
+            <p class="page-sub">Here's where Pray Charleston stands this period, and what could use your attention.</p>
+          </div>
+          <div class="inline">
+            <a class="btn btn--ghost" href="admin-guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg> New guide</a>
+            <a class="btn btn--ministry" href="admin-messaging.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> Send a message</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>This is the ministry admin's home.</b> Everything here is scoped to Charleston only — another community's dashboard shows its own churches, its own requests, its own name. The greeting name, the counts, and the "needs attention" list are simulated.
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid--4" style="margin-top:18px;">
+        <div class="stat">
+          <div class="stat__label">Participating churches</div>
+          <div class="stat__value">47 <small>/ 58 invited</small></div>
+          <div class="stat__delta up">▲ 3 joined this month</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Active pray-ers</div>
+          <div class="stat__value">1,284</div>
+          <div class="stat__delta flat">of 1,309 signed up</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Requests this month</div>
+          <div class="stat__value">38</div>
+          <div class="stat__delta up">▲ 22 answered</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Quiet churches</div>
+          <div class="stat__value" style="color:var(--rose)">5</div>
+          <div class="stat__delta down">haven't shared the guide</div>
+        </div>
+      </div>
+
+      <div class="grid" style="grid-template-columns: 1.6fr 1fr; margin-top:22px; align-items:start;">
+        <!-- Needs attention -->
+        <div class="card">
+          <div class="card__head">
+            <div class="card__title">Needs your attention</div>
+            <span class="meta">4 items</span>
+          </div>
+          <div class="card__body" style="padding-top:8px;padding-bottom:8px;">
+            <div class="rows">
+              <div class="row">
+                <span class="pill pill--urgent"><span class="pdot"></span>Urgent</span>
+                <div class="row__main">
+                  <div class="row__title">A family facing eviction asked for prayer</div>
+                  <div class="row__sub">Submitted 2 hours ago · West Ashley · not yet routed to a church</div>
+                </div>
+                <a class="btn btn--sm btn--ghost" href="admin-requests.html">Review</a>
+              </div>
+              <div class="row">
+                <span class="pill pill--new"><span class="pdot"></span>New</span>
+                <div class="row__main">
+                  <div class="row__title">5 new public requests awaiting routing</div>
+                  <div class="row__sub">Oldest waiting 1 day · assign each to a church</div>
+                </div>
+                <a class="btn btn--sm btn--ghost" href="admin-requests.html">Open inbox</a>
+              </div>
+              <div class="row">
+                <span class="pill pill--quiet"><span class="pdot"></span>Quiet</span>
+                <div class="row__main">
+                  <div class="row__title">5 churches haven't shared March's guide</div>
+                  <div class="row__sub">Published 6 days ago · leaders can be reminded in one action</div>
+                </div>
+                <a class="btn btn--sm btn--ghost" href="admin-churches.html">See churches</a>
+              </div>
+              <div class="row">
+                <span class="pill pill--praying"><span class="pdot"></span>Convergence</span>
+                <div class="row__main">
+                  <div class="row__title">3 churches independently recorded the same theme</div>
+                  <div class="row__sub">"Unity across congregations" — surfaced from the confirmation log</div>
+                </div>
+                <a class="btn btn--sm btn--ghost" href="admin-confirmations.html">View log</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- This week's focus + next gathering -->
+        <div class="stack">
+          <div class="card">
+            <div class="card__head"><div class="card__title">This week's focus</div><a class="btn btn--quiet btn--sm" href="admin-focus.html">Calendar →</a></div>
+            <div class="card__body">
+              <div class="eyebrow">Attribute of God</div>
+              <div class="serif" style="font-size:24px;font-weight:600;margin:4px 0 14px;">His Faithfulness</div>
+              <div class="eyebrow">Regional focus · Week 2 of 4</div>
+              <div class="serif" style="font-size:24px;font-weight:600;margin:4px 0 2px;">North Charleston</div>
+              <div class="tag" style="margin-top:8px;">Prayed over its schools &amp; young people</div>
+              <div class="note note--sim" style="margin-top:14px;">
+                Every logged-in pray-er sees this same focus prominently — that shared rhythm is the point (FC-6).
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__head"><div class="card__title">Next gathering</div></div>
+            <div class="card__body">
+              <div class="between">
+                <div>
+                  <div class="row__title">Monthly Holy Huddle</div>
+                  <div class="row__sub">Thu 14 March · 7:00 AM · 15 min · online</div>
+                </div>
+                <span class="pill pill--praying">Recurring</span>
+              </div>
+              <div class="divider"></div>
+              <div class="between"><span class="meta">RSVPs so far</span><b style="font-size:14px;">218 pray-ers</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note" style="margin-top:24px;">
+        <b>Where to go next.</b> The most complete flows to review are <b>Prayer requests</b> (routing and stages), <b>Focus calendar</b> (the printable prayer sheet), and <b>Praise report</b> (answered prayer beside community indicators). Everything is reachable from the left.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

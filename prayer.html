@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>This Week We Pray — Pray Charleston</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  /* Phone-first column — a pray-er lives on their phone (X-28) */
+  .ph { width: min(460px, 100%); margin: 0 auto; }
+  .ph .section { margin-top: 26px; }
+  .ph .section:first-child { margin-top: 0; }
+  .greet { display: flex; align-items: center; gap: 12px; }
+  .greet .avatar { width: 42px; height: 42px; font-size: 15px; }
+  .focus-actions { display: grid; gap: 10px; margin-top: 16px; }
+  .focus-actions .btn { width: 100%; }
+  .rmd-select { width: auto; min-width: 118px; padding: 8px 34px 8px 12px; font-size: 13.5px; font-weight: 600; }
+  @media (max-width: 480px){
+    .greet { align-items: flex-start; }
+  }
+</style>
+</head>
+<body class="notes-on">
+<div class="simbar">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+  <span><b>Interactive prototype.</b> This is the pray-er's home on a phone. Everything is simulated — use the persona switcher to change role, and "Show notes" for explanations.</span>
+</div>
+
+<div class="public-shell">
+  <div class="public-top">
+    <div class="brand__mark" style="width:32px;height:32px;font-size:17px;">✦</div>
+    <div>
+      <div style="font-family:var(--serif);font-weight:700;font-size:15px;">Pray Charleston</div>
+      <div class="meta" style="font-size:11px;">charleston.thrivingcommunities.io/pray</div>
+    </div>
+    <div class="right inline" style="gap:9px;">
+      <label class="notes-toggle" data-notes-toggle role="button" aria-pressed="true">
+        <span class="dot"></span> Show notes
+      </label>
+      <div class="persona">
+        <span class="persona__label">As</span>
+        <select data-persona aria-label="Switch persona">
+          <option value="public">Public</option>
+          <option value="admin">Ministry Admin</option>
+          <option value="leader">Church Leader</option>
+          <option value="recorder">Recorder</option>
+          <option value="prayer" selected>Pray-er</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="public-wrap">
+    <div class="ph">
+
+      <!-- ============ 1 · GREETING ============ -->
+      <div class="section">
+        <div class="eyebrow eyebrow--amethyst">Pray Charleston · West Ashley</div>
+        <div class="greet" style="margin-top:12px;">
+          <div class="avatar">RH</div>
+          <div>
+            <div class="meta" style="font-size:12px;">Welcome back, Ruth</div>
+            <h1 class="page-title" style="font-size:30px;margin-top:2px;">This week, we pray</h1>
+          </div>
+        </div>
+        <div class="note note--sim">
+          <b>You're not praying alone.</b> Every pray-er across the community — around 60 churches — sees this <b>same</b> focus this week. That shared rhythm, everyone agreeing in prayer over the same thing at the same time, is the whole point (FC-6).
+        </div>
+      </div>
+
+      <!-- ============ 2 · THIS WEEK'S FOCUS ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">This week's focus</div>
+          <span class="meta">Week of 10 Mar</span>
+        </div>
+
+        <div class="paper-doc" style="padding:30px 26px;">
+          <div class="paper-doc__kicker">Pray Charleston · Week 2 of the cycle</div>
+          <div class="paper-doc__rule"></div>
+
+          <div style="text-align:center;">
+            <div class="eyebrow" style="color:var(--gilt);">Attribute of God</div>
+            <div class="serif" style="font-size:26px;font-weight:700;margin-top:5px;">His Faithfulness</div>
+          </div>
+
+          <div class="verse">
+            "Because of the LORD's great love we are not consumed, for his compassions never fail. They are new every morning; great is your faithfulness."
+            <cite>Lamentations 3:22–23</cite>
+          </div>
+
+          <h4>✦ This week's region — North Charleston</h4>
+          <p>The next generation: our schools and the young people growing up here. Pray for safety on the way to school, for hope, and for doors of opportunity to open.</p>
+        </div>
+
+        <div class="focus-actions">
+          <button class="btn btn--ministry btn--lg" data-action="toast:Opening this week's prayer sheet">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+            Open this week's prayer sheet
+          </button>
+          <button class="btn btn--ghost" data-action="toast:Opening the March prayer guide">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Read the March guide
+          </button>
+        </div>
+        <div class="note">
+          <b>The guide is always there.</b> A pray-er can read the current guide any time, not only when it's first sent — it lives here on their home (GD-11).
+        </div>
+      </div>
+
+      <!-- ============ 3 · THE RHYTHM THIS MONTH ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">The rhythm this month</div>
+          <span class="meta">4-week cycle</span>
+        </div>
+        <p class="soft" style="font-size:13.5px;margin-bottom:4px;">Where the whole community is in the rotation — one region, one way, each week.</p>
+        <div class="cycle" style="margin-top:14px;">
+          <div class="cycle__wk">
+            <div class="cycle__n">Week 1 · Families</div>
+            <div class="cycle__region">Charleston</div>
+            <div class="cycle__way">Households, marriages, children at home</div>
+          </div>
+          <div class="cycle__wk is-current">
+            <div class="cycle__n">Week 2 · The next generation</div>
+            <div class="cycle__region">North Charleston</div>
+            <div class="cycle__way">Schools, young people, teachers</div>
+          </div>
+          <div class="cycle__wk">
+            <div class="cycle__n">Week 3 · Safety &amp; peace</div>
+            <div class="cycle__region">Mount Pleasant</div>
+            <div class="cycle__way">First responders, streets, reconciliation</div>
+          </div>
+          <div class="cycle__wk">
+            <div class="cycle__n">Week 4 · Provision</div>
+            <div class="cycle__region">Summerville</div>
+            <div class="cycle__way">Work, businesses, those in need</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ 4 · UPCOMING GATHERINGS ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Upcoming gatherings</div>
+          <span class="meta">2 coming up</span>
+        </div>
+        <div class="card">
+          <div class="card__body" style="padding-top:6px;padding-bottom:6px;">
+            <div class="rows">
+              <div class="row">
+                <div class="row__main">
+                  <div class="inline" style="gap:8px;">
+                    <div class="row__title">Monthly Holy Huddle</div>
+                    <span class="pill pill--praying">Recurring</span>
+                  </div>
+                  <div class="row__sub">Thu 14 Mar · 7:00 AM · 15 min · online</div>
+                </div>
+                <button class="btn btn--sm btn--ghost" data-action="toast:You're RSVP'd — reminder set">RSVP</button>
+              </div>
+              <div class="row">
+                <div class="row__main">
+                  <div class="inline" style="gap:8px;">
+                    <div class="row__title">Night of Prayer for our Schools</div>
+                    <span class="tag">West Ashley</span>
+                  </div>
+                  <div class="row__sub">Fri 22 Mar · 7:00 PM · 90 min · St Andrew's Church</div>
+                </div>
+                <button class="btn btn--sm btn--ghost" data-action="toast:You're RSVP'd — reminder set">RSVP</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="note">
+          <b>The link comes with the reminder.</b> For online gatherings the joining link isn't shown here — it arrives with the reminder just before it starts, so no one has to hunt for it (GH-7).
+        </div>
+      </div>
+
+      <!-- ============ 5 · YOUR PRAYER LIFE ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Your prayer life</div>
+        </div>
+        <div class="card card--pad">
+          <div class="who">
+            <div class="avatar">EC</div>
+            <div style="flex:1;min-width:0;">
+              <div class="who__name">East Cooper Baptist</div>
+              <div class="who__meta">Your church · Mount Pleasant</div>
+            </div>
+            <button class="btn btn--sm btn--ghost" data-action="toast:Change your church or go independent">Fix my church</button>
+          </div>
+          <p class="soft" style="font-size:13px;margin-top:10px;">Not with a church right now? You can pray as an independent pray-er instead — you'll still get the same weekly focus (ON-7). "Fix my church" lets you correct this yourself (ON-9).</p>
+
+          <div class="divider"></div>
+
+          <div class="between">
+            <div>
+              <div class="row__title">Remind me of the focus</div>
+              <div class="row__sub">A gentle nudge with this week's prayer</div>
+            </div>
+            <select class="select rmd-select" aria-label="Focus reminder frequency">
+              <option>Daily</option>
+              <option selected>Weekly</option>
+              <option>Off</option>
+            </select>
+          </div>
+          <div class="note note--sim">
+            You choose how often, and you can turn it off entirely — reminders always respect your own opt-out (FC-13, X-7).
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ 6 · SUBMIT A REQUEST ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Carrying something?</div>
+        </div>
+        <div class="card card--pad">
+          <p class="soft" style="font-size:14px;margin-bottom:14px;">You can ask the community to pray for you or someone you love, any time.</p>
+          <button class="btn btn--ministry btn--lg" data-action="nav:public-request.html" style="width:100%;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Ask for prayer
+          </button>
+          <div class="note">
+            <b>No re-typing your details.</b> Because you're signed in, your name and neighbourhood are already filled in — you just write what you'd like prayer for (PR-6).
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ 7 · RECENTLY ANSWERED ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Recently answered</div>
+          <span class="pill pill--answered">Praise God</span>
+        </div>
+        <div class="card">
+          <div class="card__body" style="padding-top:6px;padding-bottom:6px;">
+            <div class="rows">
+              <div class="row">
+                <div class="row__main">
+                  <div class="row__title">A job, after months of waiting</div>
+                  <div class="row__sub">Prayed over 6 weeks · North Charleston · shared with thanks</div>
+                </div>
+                <span class="pill pill--answered">Answered</span>
+              </div>
+              <div class="row">
+                <div class="row__main">
+                  <div class="row__title">A daughter home safe and well</div>
+                  <div class="row__sub">Prayed over 3 weeks · West Ashley · shared with thanks</div>
+                </div>
+                <span class="pill pill--answered">Answered</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="note note--sim">
+          Only requests people chose to share as answered appear here, and never with any contact details — just the encouragement (X-8, X-9).
+        </div>
+      </div>
+
+      <p class="meta" style="text-align:center;margin-top:28px;">
+        Pray Charleston is the prayer ministry of Charleston United · one community on the Thriving Communities platform
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

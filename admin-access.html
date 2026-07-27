@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Delegated access — Pray Charleston</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body class="notes-on">
+<div class="simbar">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+  <span><b>Interactive prototype.</b> Granting and revoking access are simulated. Use the persona switcher (top-right) to change role, and "Show notes" for explanations.</span>
+</div>
+
+<div class="app">
+  <!-- ============ SIDEBAR (canonical — reused on all admin pages) ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__mark">✦</div>
+      <div>
+        <div class="brand__name">Pray Charleston</div>
+        <div class="brand__sub">Ministry Admin</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav__group">
+        <div class="nav__label">Overview</div>
+        <a class="nav__item" href="admin-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg> Dashboard</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Requests</div>
+        <a class="nav__item" href="admin-requests.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg> Prayer requests <span class="nav__badge">6</span></a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Publish</div>
+        <a class="nav__item" href="admin-guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Prayer guide</a>
+        <a class="nav__item" href="admin-focus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Focus calendar</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">People</div>
+        <a class="nav__item" href="admin-churches.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg> Churches &amp; leaders</a>
+        <a class="nav__item" href="admin-messaging.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg> Reaching people</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Insight</div>
+        <a class="nav__item" href="admin-confirmations.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Confirmation log</a>
+        <a class="nav__item" href="admin-praise.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> Praise report</a>
+      </div>
+      <div class="nav__group">
+        <div class="nav__label">Settings</div>
+        <a class="nav__item is-active" href="admin-access.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Delegated access</a>
+        <a class="nav__item" href="admin-charleston.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg> Charleston launch</a>
+      </div>
+    </nav>
+    <div class="nav__foot">Thriving Communities · tenant: charleston</div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+    <div class="topbar">
+      <button class="menu-btn" data-menu-btn aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+      <div class="topbar__crumb"><b>Delegated access</b></div>
+      <div class="topbar__spacer"></div>
+      <label class="notes-toggle" data-notes-toggle role="button" aria-pressed="true"><span class="dot"></span> Show notes</label>
+      <div class="persona">
+        <span class="persona__label">Viewing as</span>
+        <select data-persona aria-label="Switch persona">
+          <option value="public">Public</option>
+          <option value="admin" selected>Ministry Admin</option>
+          <option value="leader">Church Leader</option>
+          <option value="recorder">Recorder</option>
+          <option value="prayer">Pray-er</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-head">
+        <div class="page-head-row">
+          <div>
+            <div class="eyebrow eyebrow--amethyst">Settings · Requirements §7.4</div>
+            <h1 class="page-title">Delegated access</h1>
+            <p class="page-sub">Let someone help run the ministry — without handing them the keys to everything.</p>
+          </div>
+          <div class="inline">
+            <button class="btn btn--ministry" data-action="modal:grantModal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg> Give someone access</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>Today, admin access is all-or-nothing.</b> There is one Admin role, and it can do everything — every user, every setting, the whole community. So asking someone to simply help work prayer requests currently means handing them power to manage every person in Charleston. Delegated access fixes that: you hand over a defined slice of the work, and nothing more. This is a <b>platform capability</b> (X-27, X-30) — it belongs to Thriving Communities as a whole and works the same for any area of the product. It's being built for the prayer areas first.
+      </div>
+
+      <!-- ============ WHO HAS ACCESS ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Who has access</div>
+          <span class="meta">4 people · Charleston</span>
+        </div>
+
+        <div class="note note--sim">
+          You can always see who can touch what (X-21). Every action a delegated admin takes is recorded against <b>them by name</b> — never as "an admin" (X-24). And revoking access takes effect <b>at once</b>, not at their next login (X-22).
+        </div>
+
+        <div class="table-wrap" style="margin-top:14px;">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Person</th>
+                <th>Areas</th>
+                <th>Scope</th>
+                <th>Added</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="who">
+                    <div class="avatar">DK</div>
+                    <div>
+                      <div class="who__name">Deborah Kessler</div>
+                      <div class="who__meta">deborah.kessler@stmarks.org</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="inline">
+                    <span class="tag">Prayer requests</span>
+                    <span class="tag">Confirmations</span>
+                  </div>
+                </td>
+                <td><span class="pill pill--outline">Charleston only</span></td>
+                <td class="meta">12 Feb</td>
+                <td>
+                  <div class="inline right">
+                    <button class="btn btn--sm btn--ghost" data-action="modal:grantModal">Edit</button>
+                    <button class="btn btn--sm btn--danger" data-action="toast:Access revoked — effective immediately">Revoke</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="who">
+                    <div class="avatar">MB</div>
+                    <div>
+                      <div class="who__name">Marcus Bell</div>
+                      <div class="who__meta">marcus.bell@gracechapel.org</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="inline">
+                    <span class="tag">Guide &amp; focus</span>
+                    <span class="tag">Reaching people</span>
+                  </div>
+                </td>
+                <td><span class="pill pill--outline">Charleston only</span></td>
+                <td class="meta">28 Jan</td>
+                <td>
+                  <div class="inline right">
+                    <button class="btn btn--sm btn--ghost" data-action="modal:grantModal">Edit</button>
+                    <button class="btn btn--sm btn--danger" data-action="toast:Access revoked — effective immediately">Revoke</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="who">
+                    <div class="avatar">JN</div>
+                    <div>
+                      <div class="who__name">Joyce Nkemdirim</div>
+                      <div class="who__meta">joyce.n@lowcountrycares.org</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="inline">
+                    <span class="tag">Reporting only</span>
+                  </div>
+                </td>
+                <td><span class="pill pill--outline">Charleston only</span></td>
+                <td class="meta">3 Feb</td>
+                <td>
+                  <div class="inline right">
+                    <button class="btn btn--sm btn--ghost" data-action="modal:grantModal">Edit</button>
+                    <button class="btn btn--sm btn--danger" data-action="toast:Access revoked — effective immediately">Revoke</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="who">
+                    <div class="avatar">PE</div>
+                    <div>
+                      <div class="who__name">Pastor Ellison</div>
+                      <div class="who__meta">ellison@praycharleston.org</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="pill pill--active">All areas</span>
+                </td>
+                <td><span class="pill pill--outline">Charleston only</span></td>
+                <td class="meta">Owner</td>
+                <td>
+                  <div class="inline right">
+                    <span class="meta">Full administrator</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ============ AREAS THAT CAN BE DELEGATED ============ -->
+      <div class="section">
+        <div class="section__head">
+          <div class="section__title">Areas that can be delegated</div>
+          <span class="meta">6 areas</span>
+        </div>
+
+        <div class="note">
+          Access is granted by <b>area of work</b> (X-20, X-25) — meaningful units someone can be trusted with, not a long checklist of tiny permissions. Each area carries everything needed to do that job, and nothing outside it.
+        </div>
+
+        <div class="grid grid--3" style="margin-top:14px;">
+          <div class="card card--pad">
+            <div class="between">
+              <div class="who__name">Prayer requests</div>
+              <span class="tag">Area</span>
+            </div>
+            <p class="soft" style="font-size:13px;margin-top:8px;">View incoming requests, route each to a church, and work them through their stages.</p>
+          </div>
+          <div class="card card--pad">
+            <div class="between">
+              <div class="who__name">Guide &amp; focus</div>
+              <span class="tag">Area</span>
+            </div>
+            <p class="soft" style="font-size:13px;margin-top:8px;">Author the monthly guide and set the weekly focus rotation.</p>
+          </div>
+          <div class="card card--pad">
+            <div class="between">
+              <div class="who__name">Confirmations</div>
+              <span class="tag">Area</span>
+            </div>
+            <p class="soft" style="font-size:13px;margin-top:8px;">Browse and review the confirmation log of who prayed for what.</p>
+          </div>
+          <div class="card card--pad">
+            <div class="between">
+              <div class="who__name">Reporting</div>
+              <span class="tag">Area</span>
+            </div>
+            <p class="soft" style="font-size:13px;margin-top:8px;">Build and export praise reports and ministry summaries.</p>
+          </div>
+          <div class="card card--pad">
+            <div class="between">
+              <div class="who__name">Reaching people</div>
+              <span class="tag">Area</span>
+            </div>
+            <p class="soft" style="font-size:13px;margin-top:8px;">Send messages and the guide out to churches, leaders and pray-er groups.</p>
+          </div>
+          <div class="card card--pad">
+            <div class="between">
+              <div class="who__name">Events &amp; gatherings</div>
+              <span class="tag">Area</span>
+            </div>
+            <p class="soft" style="font-size:13px;margin-top:8px;">Schedule holy huddles and gatherings, and track who's coming.</p>
+          </div>
+        </div>
+
+        <div class="note note--sim">
+          Notice there's no "manage users" or "billing" area to hand out — a delegated admin never touches the whole community, only the slices you choose (X-23).
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="note">
+        <b>Where this is headed.</b> Because delegated access is a platform capability, the same six-area model will extend to other parts of Thriving Communities beyond prayer. Reviewing it here, in the prayer ministry, is the first place it appears.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ GRANT MODAL ============ -->
+<div class="modal" id="grantModal">
+  <div class="modal__card">
+    <div class="modal__head"><h3 class="serif" style="font-size:21px;">Give someone access</h3></div>
+    <div class="modal__body">
+      <p class="soft">Pick a person in your community, then choose the areas of work they can help with. Everything outside those areas stays off-limits.</p>
+
+      <div class="field" style="margin-top:16px;">
+        <label class="field__label">Person</label>
+        <select class="select">
+          <option>Deborah Kessler — St Mark's</option>
+          <option>Marcus Bell — Grace Chapel</option>
+          <option>Joyce Nkemdirim — Lowcountry Cares</option>
+          <option>Angela Ruiz — Mount Pleasant Fellowship</option>
+          <option>David Okafor — Summerville Community Church</option>
+        </select>
+        <div class="field__hint">Only people already part of the Charleston community can be chosen.</div>
+      </div>
+
+      <div class="field">
+        <label class="field__label">Areas they can help with</label>
+        <div class="stack" style="margin-top:4px;">
+          <label class="check"><input type="checkbox" checked><span><span class="check__title">Prayer requests</span><span class="check__desc">View, route and work incoming requests.</span></span></label>
+          <label class="check"><input type="checkbox"><span><span class="check__title">Guide &amp; focus</span><span class="check__desc">Author the guide and set the rotation.</span></span></label>
+          <label class="check"><input type="checkbox"><span><span class="check__title">Confirmations</span><span class="check__desc">Browse and review the confirmation log.</span></span></label>
+          <label class="check"><input type="checkbox"><span><span class="check__title">Reporting</span><span class="check__desc">Build and export praise reports.</span></span></label>
+          <label class="check"><input type="checkbox"><span><span class="check__title">Reaching people</span><span class="check__desc">Send messages out to groups.</span></span></label>
+          <label class="check"><input type="checkbox"><span><span class="check__title">Events &amp; gatherings</span><span class="check__desc">Schedule huddles and track RSVPs.</span></span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field__label">Scope</label>
+        <div class="inline">
+          <span class="pill pill--outline">Charleston only</span>
+          <span class="meta">fixed — cannot be platform-wide</span>
+        </div>
+        <div class="field__hint">Access is always scoped to this one community. No delegated admin can ever act across other communities (X-23).</div>
+      </div>
+
+      <div class="note" style="margin-top:4px;">
+        <b>What this person will not be able to do.</b> They cannot grant access to anyone else, and they cannot widen their own access beyond the areas you pick (X-26). Only a full administrator can do that.
+      </div>
+
+      <div class="note note--sim">
+        <b>Simulated.</b> No access is actually changed. In production this takes effect at once and every later action is attributed to this person by name (X-22, X-24).
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--ghost" data-action="close">Cancel</button>
+      <button class="btn btn--ministry" data-action="toast-close:Access granted to Deborah — Prayer requests">Grant access</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -83,6 +83,7 @@
             <p class="page-sub">Every participating church in Charleston, its leader, its pray-ers — and which ones have gone quiet.</p>
           </div>
           <div class="inline">
+            <button class="btn btn--ghost" data-action="modal:groupModal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg> Add a group</button>
             <button class="btn btn--ghost" data-action="toast:Add a church — search the community first"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg> Add a church</button>
             <button class="btn btn--ministry" data-action="toast:Import church list started"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg> Import church list</button>
           </div>
@@ -357,6 +358,34 @@
           </table>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ADD A GROUP MODAL ============ -->
+<div class="modal" id="groupModal">
+  <div class="modal__card">
+    <div class="modal__head"><h3 class="serif" style="font-size:21px;">Create a group</h3></div>
+    <div class="modal__body">
+      <p class="soft">Groups let you cluster churches — by area, network, or size — so you can message them together, track them as a set, and see engagement for just that group. Grouping doesn't change the churches themselves.</p>
+      <div class="field" style="margin-top:16px;">
+        <label class="field__label" for="grpName">Group name</label>
+        <input class="input" id="grpName" placeholder="e.g. North Charleston churches">
+      </div>
+      <div class="field">
+        <label class="field__label">Churches in this group</label>
+        <div class="stack">
+          <label class="check"><input type="checkbox"><span><span class="check__title">New Life Fellowship</span><span class="check__desc">North Charleston</span></span></label>
+          <label class="check"><input type="checkbox"><span><span class="check__title">Royal Missionary Baptist</span><span class="check__desc">North Charleston</span></span></label>
+          <label class="check"><input type="checkbox"><span><span class="check__title">East Cooper Baptist</span><span class="check__desc">Mount Pleasant</span></span></label>
+          <label class="check"><input type="checkbox"><span><span class="check__title">Seacoast Church</span><span class="check__desc">Mount Pleasant</span></span></label>
+        </div>
+      </div>
+      <div class="note" style="margin-top:12px;"><b>Simulated.</b> No group is actually created. A group can be used anywhere a set of churches is useful — a targeted send, a filtered engagement view, or a per-group praise report.</div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--ghost" data-action="close">Cancel</button>
+      <button class="btn btn--ministry" data-action="toast-close:Group created">Create group</button>
     </div>
   </div>
 </div>
